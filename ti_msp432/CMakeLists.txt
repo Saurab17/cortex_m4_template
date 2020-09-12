@@ -48,5 +48,11 @@ set(CMAKE_C_FLAGS_DEBUG "-Og ${DEBUG_FLAGS}")
 add_subdirectory(board_essentials)
 
 # add the executable
-add_executable(${PROJECT_NAME}.out  ${SOURCES} $<TARGET_OBJECTS:board_essentials>)
-target_link_libraries(${PROJECT_NAME}.out board_essentials)
+set(EXECUTABLE ${PROJECT_NAME}.out)
+add_executable(${EXECUTABLE}  ${SOURCES} $<TARGET_OBJECTS:board_essentials>)
+target_link_libraries(${EXECUTABLE} board_essentials)
+
+# Generate and display code sizes
+add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
+    COMMAND size ${BIN_DIRECTORY}/${EXECUTABLE}
+    COMMENT "Generating build size...")
