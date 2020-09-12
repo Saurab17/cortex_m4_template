@@ -7,7 +7,7 @@ project(cortex_m4_template VERSION 1.0)
 set(BIN_DIRECTORY   ${CMAKE_BINARY_DIR}/bin)
 file(MAKE_DIRECTORY ${BIN_DIRECTORY})
 
-# Create Executable (add_executable) in bin directory
+# Create Executable (add_executable output) in bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIRECTORY})
 
 # Set the source files
@@ -50,13 +50,3 @@ add_subdirectory(board_essentials)
 # add the executable
 add_executable(${PROJECT_NAME}.out  ${SOURCES} $<TARGET_OBJECTS:board_essentials>)
 target_link_libraries(${PROJECT_NAME}.out board_essentials)
-
-#######################...Add our custom command to generate binaries....########
-# set(CMAKE_C_OBJCOPY ${GCC_PATH}/arm-none-eabi-objcopy CACHE PATH "" FORCE)
-
-# add_custom_target(${PROJECT_NAME}.bin ALL DEPENDS ${PROJECT_NAME}.elf)
-
-# add_custom_command(TARGET ${PROJECT_NAME}.bin COMMAND 
-# ${CMAKE_C_OBJCOPY} ARGS -O binary ${PROJECT_NAME}.elf ${BIN_DIRECTORY}/${PROJECT_NAME}.bin)
-
-#################################################################################
