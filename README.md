@@ -1,7 +1,7 @@
 # Arm Cortex-M4 Template
 A cross development [CMake](https://cmake.org/) project template for arm cortex-m4 based microcontrollers on `Linux` host.  
 The main purpose of this template is to help embedded developers leverage CMake build features. Also,   
-with this template, you are free to use your own favorite C/C++ code editor like `VS` `Code`, `Atom` etc.
+with this template, you are free to use your own favorite C/C++ code editor like `VS Code`, `Atom` etc.
 
 ## Project Setup
 The top-level project directory structure is as follows:  
@@ -29,8 +29,8 @@ The top-level project directory structure is as follows:
     - The linker script for the particular board provided by the vendor.
 
 ## Building and Compilation
-The final output is generated inside the `bin` subdirectory of build directory. Following commands  
-need to be run while in project directory, for example, in ti_msp432.  
+The final output is generated inside the `bin` subdirectory of build directory. To generate the binary output,  
+run following commands while in project directory, for example, in ti_msp432.  
 For `debug` build:
 ```
 $ mkdir debug
