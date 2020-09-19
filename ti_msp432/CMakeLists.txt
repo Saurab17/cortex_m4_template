@@ -46,11 +46,14 @@ set(CMAKE_C_FLAGS_DEBUG "-Og ${DEBUG_FLAGS}")
 
 # add the libraries
 add_subdirectory(board_essentials)
+add_subdirectory(bsp)
 
 # add the executable
 set(EXECUTABLE ${PROJECT_NAME}.out)
 add_executable(${EXECUTABLE}  ${SOURCES} $<TARGET_OBJECTS:board_essentials>)
-target_link_libraries(${EXECUTABLE} board_essentials)
+target_link_libraries(${EXECUTABLE} 
+    board_essentials
+    bsp)
 
 # Generate and display code sizes
 add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
