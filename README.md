@@ -14,6 +14,11 @@ The top-level project directory structure is as follows:
         -  [STLink STM32F4xx Discovery](https://github.com/charleskorn/stm32f4-project-template/tree/master/lib/stm32f4xx)
         -   [Nordic nRF52840](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-MDK/Download#infotabs)
 
++ bsp
+    - This directory to store the board support software from vendor. 
+    - Subdirectories:
+        -  [driverlib](https://www.ti.com/tool/MSPDRIVERLIB): Software APIs that abstract away the details of the device’s hardware registers.
+
 + cross_compiler
     - This directory contains the [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm) to cross-compile your source code  
     and generate binaries for your cortex-m4 microcontroller.
