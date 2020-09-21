@@ -3,6 +3,8 @@ A cross development [CMake](https://cmake.org/) project template for arm cortex-
 The main purpose of this template is to help embedded developers leverage CMake build features. Also,   
 with this template, you are free to use your own favorite C/C++ code editor like `VS Code`, `Atom` etc.
 
+![msp432p401r pinout](MSP432-Pinout.png)
+
 ## Project Setup
 The top-level project directory structure is as follows:  
 
