@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018, Texas Instruments Incorporated
+ * Copyright (c) 2015-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -44,34 +44,34 @@
 #define DeviceFamily_MSP432P401x
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <Power.h>
-#include <power/PowerMSP432.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
 
-#include <msp.h>
-#include <rom.h>
-#include <rom_map.h>
-#include <adc14.h>
-#include <dma.h>
-#include <gpio.h>
-#include <i2c.h>
-#include <interrupt.h>
-#include <pmap.h>
-#include <ref_a.h>
-#include <spi.h>
-#include <timer_a.h>
-#include <timer32.h>
-#include <uart.h>
-#include <wdt_a.h>
+#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/adc14.h>
+#include <ti/devices/msp432p4xx/driverlib/dma.h>
+#include <ti/devices/msp432p4xx/driverlib/gpio.h>
+#include <ti/devices/msp432p4xx/driverlib/i2c.h>
+#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <ti/devices/msp432p4xx/driverlib/pmap.h>
+#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
+#include <ti/devices/msp432p4xx/driverlib/spi.h>
+#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
+#include <ti/devices/msp432p4xx/driverlib/timer32.h>
+#include <ti/devices/msp432p4xx/driverlib/uart.h>
+#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
 
 #include "MSP_EXP432P401R.h"
 
 /*
  *  =============================== ADC ===============================
  */
-#include <ADC.h>
-#include <adc/ADCMSP432.h>
+#include <ti/drivers/ADC.h>
+#include <ti/drivers/adc/ADCMSP432.h>
 
 /* ADC objects */
 ADCMSP432_Object adcMSP432Objects[MSP_EXP432P401R_ADCCOUNT];
@@ -108,8 +108,8 @@ const uint_least8_t ADC_count = MSP_EXP432P401R_ADCCOUNT;
 /*
  *  =============================== ADCBuf ===============================
  */
-#include <ADCBuf.h>
-#include <adcbuf/ADCBufMSP432.h>
+#include <ti/drivers/ADCBuf.h>
+#include <ti/drivers/adcbuf/ADCBufMSP432.h>
 
 /* ADC objects */
 ADCBufMSP432_Object adcbufMSP432Objects[MSP_EXP432P401R_ADCBUFCOUNT];
@@ -176,8 +176,8 @@ const uint_least8_t ADCBuf_count = MSP_EXP432P401R_ADCBUFCOUNT;
 /*
  *  ============================= Capture =============================
  */
-#include <Capture.h>
-#include <capture/CaptureMSP432.h>
+#include <ti/drivers/Capture.h>
+#include <ti/drivers/capture/CaptureMSP432.h>
 
 CaptureMSP432_Object captureMSP432Objects[MSP_EXP432P401R_CAPTURECOUNT];
 
@@ -231,7 +231,7 @@ const uint_least8_t Capture_count = MSP_EXP432P401R_CAPTURECOUNT;
 /*
  *  =============================== DMA ===============================
  */
-#include <dma/UDMAMSP432.h>
+#include <ti/drivers/dma/UDMAMSP432.h>
 
 static DMA_ControlTable dmaControlTable[16] __attribute__ ((aligned (256)));
 
@@ -267,9 +267,9 @@ const UDMAMSP432_Config UDMAMSP432_config = {
 /*
  *  ============================= Display =============================
  */
-#include <Display.h>
-#include <DisplayUart.h>
-#include <DisplaySharp.h>
+#include <ti/display/Display.h>
+#include <ti/display/DisplayUart.h>
+#include <ti/display/DisplaySharp.h>
 #define MAXPRINTLEN 1024
 
 /* This value can be changed to 96 for use with the 430BOOST-SHARP96 BoosterPack. */
@@ -346,10 +346,18 @@ void MSP_EXP432P401R_initGeneral(void)
 }
 
 /*
+ *  ======== Board_init ========
+ */
+void Board_init(void)
+{
+    MSP_EXP432P401R_initGeneral();
+}
+
+/*
  *  =============================== GPIO ===============================
  */
-#include <GPIO.h>
-#include <gpio/GPIOMSP432.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/drivers/gpio/GPIOMSP432.h>
 
 /*
  * Array of Pin configurations
@@ -438,8 +446,8 @@ const GPIOMSP432_Config GPIOMSP432_config = {
 /*
  *  =============================== I2C ===============================
  */
-#include <I2C.h>
-#include <i2c/I2CMSP432.h>
+#include <ti/drivers/I2C.h>
+#include <ti/drivers/i2c/I2CMSP432.h>
 
 I2CMSP432_Object i2cMSP432Objects[MSP_EXP432P401R_I2CCOUNT];
 
@@ -480,8 +488,8 @@ const uint_least8_t I2C_count = MSP_EXP432P401R_I2CCOUNT;
 /*
  *  =============================== I2CSlave ===============================
  */
-#include <I2CSlave.h>
-#include <i2cslave/I2CSlaveMSP432.h>
+#include <ti/drivers/I2CSlave.h>
+#include <ti/drivers/i2cslave/I2CSlaveMSP432.h>
 
 I2CSlaveMSP432_Object i2cSlaveMSP432Objects[MSP_EXP432P401R_I2CSLAVECOUNT];
 
@@ -509,8 +517,8 @@ const uint_least8_t I2CSlave_count = MSP_EXP432P401R_I2CSLAVECOUNT;
 /*
  *  =============================== NVS ===============================
  */
-#include <NVS.h>
-#include <nvs/NVSMSP432.h>
+#include <ti/drivers/NVS.h>
+#include <ti/drivers/nvs/NVSMSP432.h>
 
 #define SECTORSIZE       0x1000
 #define NVS_REGIONS_BASE 0x30000
@@ -576,20 +584,50 @@ const uint_least8_t NVS_count = MSP_EXP432P401R_NVSCOUNT;
 /*
  *  =============================== Power ===============================
  */
+#include <ti/devices/msp432p4xx/driverlib/cs.h>
+#include <ti/devices/msp432p4xx/driverlib/pcm.h>
+
+/* Custom performance level for SPI Master Example */
+PowerMSP432_PerfLevel myPerfLevels[] = {{
+      .activeState = PCM_AM_DCDC_VCORE0,
+      .VCORE = 0,
+      .clockSource = CS_DCOCLK_SELECT,
+      .DCORESEL = CS_DCO_TUNE_FREQ,
+      .tuneFreqDCO = 10000000,
+      .SELM = CS_DCOCLK_SELECT,
+      .DIVM = CS_CLOCK_DIVIDER_1,
+      .SELS = CS_DCOCLK_SELECT,
+      .DIVHS = CS_CLOCK_DIVIDER_1,
+      .DIVS = CS_CLOCK_DIVIDER_1,
+      .SELB = CS_REFOCLK_SELECT,
+      .SELA = CS_REFOCLK_SELECT,
+      .DIVA = CS_CLOCK_DIVIDER_1,
+      .flashWaitStates = 0,
+      .enableFlashBuffer = true,
+      .MCLK = 10000000,
+      .HSMCLK = 10000000,
+      .SMCLK = 10000000,
+      .BCLK = 32768,
+      .ACLK = 32768,
+
+}};
+
 const PowerMSP432_ConfigV1 PowerMSP432_config = {
     .policyInitFxn = &PowerMSP432_initPolicy,
     .policyFxn = &PowerMSP432_sleepPolicy,
     .initialPerfLevel = 2,
     .enablePolicy = true,
     .enablePerf = true,
-    .enableParking = true
+    .enableParking = true,
+    .customPerfLevels = myPerfLevels,
+    .numCustom = sizeof(myPerfLevels) / sizeof(PowerMSP432_PerfLevel)
 };
 
 /*
  *  =============================== PWM ===============================
  */
-#include <PWM.h>
-#include <pwm/PWMTimerMSP432.h>
+#include <ti/drivers/PWM.h>
+#include <ti/drivers/pwm/PWMTimerMSP432.h>
 
 PWMTimerMSP432_Object pwmTimerMSP432Objects[MSP_EXP432P401R_PWMCOUNT];
 
@@ -622,34 +660,34 @@ const uint_least8_t PWM_count = MSP_EXP432P401R_PWMCOUNT;
 /*
  *  =============================== SDFatFS ===============================
  */
-// #include <SD.h>
-// #include <SDFatFS.h>
+#include <ti/drivers/SD.h>
+#include <ti/drivers/SDFatFS.h>
 
-// /*
-//  * Note: The SDFatFS driver provides interface functions to enable FatFs
-//  * but relies on the SD driver to communicate with SD cards.  Opening a
-//  * SDFatFs driver instance will internally try to open a SD driver instance
-//  * reusing the same index number (opening SDFatFs driver at index 0 will try to
-//  * open SD driver at index 0).  This requires that all SDFatFs driver instances
-//  * have an accompanying SD driver instance defined with the same index.  It is
-//  * acceptable to have more SD driver instances than SDFatFs driver instances
-//  * but the opposite is not supported & the SDFatFs will fail to open.
-//  */
-// SDFatFS_Object sdfatfsObjects[MSP_EXP432P401R_SDFatFSCOUNT];
+/*
+ * Note: The SDFatFS driver provides interface functions to enable FatFs
+ * but relies on the SD driver to communicate with SD cards.  Opening a
+ * SDFatFs driver instance will internally try to open a SD driver instance
+ * reusing the same index number (opening SDFatFs driver at index 0 will try to
+ * open SD driver at index 0).  This requires that all SDFatFs driver instances
+ * have an accompanying SD driver instance defined with the same index.  It is
+ * acceptable to have more SD driver instances than SDFatFs driver instances
+ * but the opposite is not supported & the SDFatFs will fail to open.
+ */
+SDFatFS_Object sdfatfsObjects[MSP_EXP432P401R_SDFatFSCOUNT];
 
-// const SDFatFS_Config SDFatFS_config[MSP_EXP432P401R_SDFatFSCOUNT] = {
-//     {
-//         .object = &sdfatfsObjects[MSP_EXP432P401R_SDFatFS0]
-//     }
-// };
+const SDFatFS_Config SDFatFS_config[MSP_EXP432P401R_SDFatFSCOUNT] = {
+    {
+        .object = &sdfatfsObjects[MSP_EXP432P401R_SDFatFS0]
+    }
+};
 
-// const uint_least8_t SDFatFS_count = MSP_EXP432P401R_SDFatFSCOUNT;
+const uint_least8_t SDFatFS_count = MSP_EXP432P401R_SDFatFSCOUNT;
 
 /*
  *  =============================== SD ===============================
  */
-#include <SD.h>
-#include <sd/SDSPI.h>
+#include <ti/drivers/SD.h>
+#include <ti/drivers/sd/SDSPI.h>
 
 SDSPI_Object sdspiObjects[MSP_EXP432P401R_SDCOUNT];
 
@@ -673,8 +711,8 @@ const uint_least8_t SD_count = MSP_EXP432P401R_SDCOUNT;
 /*
  *  =============================== SPI ===============================
  */
-#include <SPI.h>
-#include <spi/SPIMSP432DMA.h>
+#include <ti/drivers/SPI.h>
+#include <ti/drivers/spi/SPIMSP432DMA.h>
 
 SPIMSP432DMA_Object spiMSP432DMAObjects[MSP_EXP432P401R_SPICOUNT];
 
@@ -778,8 +816,8 @@ const uint_least8_t SPI_count = MSP_EXP432P401R_SPICOUNT;
 /*
  *  =============================== Timer ===============================
  */
-#include <Timer.h>
-#include <timer/TimerMSP432.h>
+#include <ti/drivers/Timer.h>
+#include <ti/drivers/timer/TimerMSP432.h>
 
 TimerMSP432_Object timerMSP432Objects[MSP_EXP432P401R_TIMERCOUNT];
 
@@ -853,8 +891,8 @@ const uint_least8_t Timer_count = MSP_EXP432P401R_TIMERCOUNT;
 /*
  *  =============================== UART ===============================
  */
-#include <UART.h>
-#include <uart/UARTMSP432.h>
+#include <ti/drivers/UART.h>
+#include <ti/drivers/uart/UARTMSP432.h>
 
 UARTMSP432_Object uartMSP432Objects[MSP_EXP432P401R_UARTCOUNT];
 unsigned char uartMSP432RingBuffer[MSP_EXP432P401R_UARTCOUNT][32];
@@ -875,10 +913,12 @@ const UARTMSP432_BaudrateConfig uartMSP432Baudrates[] = {
         .oversampling = 1
     },
     {115200, 12000000,  6,  8,  32, 1},
+    {115200, 10000000,  5,  7,   0, 1},
     {115200, 6000000,   3,  4,   2, 1},
     {115200, 3000000,   1, 10,   0, 1},
     {9600,   24000000, 156,  4,   0, 1},
     {9600,   12000000, 78,  2,   0, 1},
+    {9600,   10000000, 65,  2,   0, 1},
     {9600,   6000000,  39,  1,   0, 1},
     {9600,   3000000,  19,  8,  85, 1},
     {9600,   32768,     3,  0, 146, 0}
@@ -935,8 +975,8 @@ const uint_least8_t UART_count = MSP_EXP432P401R_UARTCOUNT;
 /*
  *  =============================== Watchdog ===============================
  */
-#include <Watchdog.h>
-#include <watchdog/WatchdogMSP432.h>
+#include <ti/drivers/Watchdog.h>
+#include <ti/drivers/watchdog/WatchdogMSP432.h>
 
 WatchdogMSP432_Object watchdogMSP432Objects[MSP_EXP432P401R_WATCHDOGCOUNT];
 

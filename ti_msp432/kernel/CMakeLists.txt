@@ -3,14 +3,13 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name and version
-project(third_party_libs)
+project(kernel)
 
 #add the subdirectories
-add_subdirectory(fatfs)
-add_subdirectory(spiffs)
+add_subdirectory(nortos)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
-target_link_libraries(${PROJECT_NAME} INTERFACE fatfs spiffs)
+target_link_libraries(${PROJECT_NAME} INTERFACE nortos)
 
 target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
