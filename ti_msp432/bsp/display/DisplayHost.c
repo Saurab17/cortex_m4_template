@@ -35,10 +35,10 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <Display.h>
-#include <DisplayHost.h>
+#include <ti/display/Display.h>
+#include <ti/display/DisplayHost.h>
 
-#include <dpl/SystemP.h>
+#include <ti/drivers/dpl/SystemP.h>
 
 #include <string.h>
 #include <stdint.h>

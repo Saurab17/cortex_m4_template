@@ -32,8 +32,8 @@
 /*
  *  ======== List.c ========
  */
-#include <dpl/HwiP.h>
-#include <utils/List.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/utils/List.h>
 
 #include <stdint.h>
 #include <stdbool.h>

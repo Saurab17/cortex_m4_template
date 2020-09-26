@@ -33,8 +33,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <Capture.h>
-#include <dpl/HwiP.h>
+#include <ti/drivers/Capture.h>
+#include <ti/drivers/dpl/HwiP.h>
 
 extern const Capture_Config Capture_config[];
 extern const uint_least8_t Capture_count;

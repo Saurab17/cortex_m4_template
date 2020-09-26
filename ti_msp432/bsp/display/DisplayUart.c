@@ -34,10 +34,10 @@
  *  Includes
  * -----------------------------------------------------------------------------
  */
-#include <UART.h>
+#include <ti/drivers/UART.h>
 
-#include <Display.h>
-#include <DisplayUart.h>
+#include <ti/display/Display.h>
+#include <ti/display/DisplayUart.h>
 
 #include <string.h>
 
@@ -53,9 +53,9 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <dpl/DebugP.h>
-#include <dpl/SemaphoreP.h>
-#include <dpl/SystemP.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/dpl/SystemP.h>
 
 /* -----------------------------------------------------------------------------
  *  Constants and macros

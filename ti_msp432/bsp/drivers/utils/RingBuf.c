@@ -29,8 +29,8 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#include <dpl/HwiP.h>
-#include <utils/RingBuf.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/utils/RingBuf.h>
 
 /*
  *  ======== RingBuf_construct ========

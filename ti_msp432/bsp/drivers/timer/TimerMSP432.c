@@ -34,19 +34,19 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
 
-#include <Power.h>
-#include <Timer.h>
-#include <power/PowerMSP432.h>
-#include <timer/TimerMSP432.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/Timer.h>
+#include <ti/drivers/power/PowerMSP432.h>
+#include <ti/drivers/timer/TimerMSP432.h>
 
-#include <DeviceFamily.h>
-#include <rom.h>
-#include <rom_map.h>
-#include <timer_a.h>
-#include <timer32.h>
+#include <ti/devices/DeviceFamily.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
+#include <ti/devices/msp432p4xx/driverlib/timer32.h>
 
 void TimerMSP432_close(Timer_Handle handle);
 int_fast16_t TimerMSP432_control(Timer_Handle handle,

@@ -38,8 +38,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <dpl/HwiP.h>
-#include <UART.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/UART.h>
 
 extern const UART_Config UART_config[];
 extern const uint_least8_t UART_count;

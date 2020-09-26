@@ -32,8 +32,8 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <grlib.h>
-#include <button.h>
+#include <ti/grlib/grlib.h>
+#include <ti/grlib/button.h>
 
 //*****************************************************************************
 //

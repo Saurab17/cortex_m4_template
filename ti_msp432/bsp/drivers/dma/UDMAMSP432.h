@@ -44,7 +44,7 @@
  *
  *  The UDMAMSP432 header file should be included in an application as follows:
  *  @code
- *  #include <dma/UDMAMSP432.h>
+ *  #include <ti/drivers/dma/UDMAMSP432.h>
  *  @endcode
  *
  *  ============================================================================
@@ -60,7 +60,7 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <dpl/HwiP.h>
+#include <ti/drivers/dpl/HwiP.h>
 
 /*!
  *  @brief      UDMA error function pointer
@@ -91,11 +91,11 @@ typedef void (*UDMAMSP432_ErrorFxn)(uintptr_t arg);
  *  A sample structure is shown below:
  *  @code
  *
- *  #include <udma.h>
+ *  #include <ti/devices/msp432p4xx/driverlib/udma.h>
  *
  *  static tDMAControlTable dmaControlTable[64] __attribute__ ((aligned (1024)));
  *
- *  #include <dma/UDMAMSP432.h>
+ *  #include <ti/drivers/dma/UDMAMSP432.h>
  *
  *  UDMAMSP432_Object udmaMSP432Object;
  *

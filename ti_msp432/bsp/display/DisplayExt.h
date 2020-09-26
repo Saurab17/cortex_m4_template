@@ -38,7 +38,7 @@
  * # Driver include #
  *  The display header file should be included in an application as follows:
  *  @code
- *  #include <DisplayExt.h>
+ *  #include <ti/DisplayExt.h>
  *  @endcode
  *
  *  # Operation #
@@ -55,9 +55,9 @@
  *  in this extension become usable.
  *
  *  @code
- *  #include <Display.h>
- *  #include <DisplayExt.h>
- *  #include <grlib.h>
+ *  #include <ti/display/Display.h>
+ *  #include <ti/display/DisplayExt.h>
+ *  #include <ti/grlib/grlib.h>
  *
  *  //...
  *  Display_Handle    handle;
@@ -119,8 +119,8 @@
 extern "C" {
 #endif
 
-#include <Display.h>
-#include <grlib.h>
+#include <ti/display/Display.h>
+#include <ti/grlib/grlib.h>
 
 /* -----------------------------------------------------------------------------
  *                                          Constants

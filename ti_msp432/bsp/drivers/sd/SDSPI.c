@@ -37,13 +37,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <dpl/ClockP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <GPIO.h>
-#include <SD.h>
-#include <sd/SDSPI.h>
-#include <SPI.h>
+#include <ti/drivers/dpl/ClockP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/drivers/SD.h>
+#include <ti/drivers/sd/SDSPI.h>
+#include <ti/drivers/SPI.h>
 
 /* Definitions for MMC/SDC command */
 #define CMD0                      (0x40+0)     /* GO_IDLE_STATE */

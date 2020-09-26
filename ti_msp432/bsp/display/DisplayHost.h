@@ -37,16 +37,16 @@
  *  # Driver include #
  *  The header file should be included in an application as follows:
  *  @code
- *  #include <Display.h>
- *  #include <DisplayHost.h>
+ *  #include <ti/display/Display.h>
+ *  #include <ti/display/DisplayHost.h>
  *  @endcode
  *
  *
  *  Below is an example configuration to use the HOST display.
  *
  *  @code
- *  #include <Display.h>
- *  #include <DisplayHost.h>
+ *  #include <ti/display/Display.h>
+ *  #include <ti/display/DisplayHost.h>
  *
  *  #define MAXPRINTLEN 1024
  *
@@ -86,7 +86,7 @@ extern "C"
 {
 #endif
 
-#include <Display.h>
+#include <ti/display/Display.h>
 
 /*!
  *  @brief DisplayHost Attributes

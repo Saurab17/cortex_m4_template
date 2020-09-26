@@ -40,19 +40,19 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
 
-#include <NVS.h>
-#include <nvs/NVSMSP432.h>
+#include <ti/drivers/NVS.h>
+#include <ti/drivers/nvs/NVSMSP432.h>
 
-#include DeviceFamily_constructPath(rom.h)
-#include DeviceFamily_constructPath(rom_map.h)
+#include DeviceFamily_constructPath(driverlib/rom.h)
+#include DeviceFamily_constructPath(driverlib/rom_map.h)
 
 #if defined(DeviceFamily_MSP432P401x)
- #include DeviceFamily_constructPath(flash.h)
+ #include DeviceFamily_constructPath(driverlib/flash.h)
  static uint32_t getFlashSector(uint32_t address);
  static bool unprotectMemory(uint32_t startAddr, uint32_t endAddr);
  static bool protectMemory(uint32_t startAddr, uint32_t endAddr);
@@ -60,7 +60,7 @@
  #define programMemory(a, b, c) MAP_FlashCtl_programMemory(a, b, c)
  #define FLASH_END_ADDRESS (0x0003ffff)
 #else
- #include DeviceFamily_constructPath(flash_a.h)
+ #include DeviceFamily_constructPath(driverlib/flash_a.h)
  #define protectMemory(a, b) FlashCtl_A_protectMemory(a, b)
  #define unprotectMemory(a, b) FlashCtl_A_unprotectMemory(a, b)
  #define eraseSector(a) MAP_FlashCtl_A_eraseSector(sectorBase)

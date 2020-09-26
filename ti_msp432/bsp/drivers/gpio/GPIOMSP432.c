@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018, Texas Instruments Incorporated
+ * Copyright (c) 2015-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -47,19 +47,19 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <GPIO.h>
-#include <gpio/GPIOMSP432.h>
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/drivers/gpio/GPIOMSP432.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <gpio.h>
-#include <interrupt.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/gpio.h>
+#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
 
 /*
  * There are 11 8-bit ports total (1-10 and J)
@@ -393,6 +393,15 @@ void GPIO_setCallback(uint_least8_t index, GPIO_CallbackFxn callback)
     PinConfig   *config = (PinConfig *) &GPIOMSP432_config.pinConfigs[index];
 
     DebugP_assert(initCalled && index < GPIOMSP432_config.numberOfCallbacks);
+
+    /*
+     * Ignore bogus callback indexes.
+     * Required to prevent out-of-range callback accesses if
+     * there are configured pins without callbacks
+     */
+    if (index >= GPIOMSP432_config.numberOfCallbacks) {
+        return;
+    }
 
     /*
      * Only ports 1-6 are interrupt capable;

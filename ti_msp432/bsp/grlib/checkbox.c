@@ -31,8 +31,8 @@
  */
 #include <stdint.h>
 #include <stdbool.h>
-#include <grlib.h>
-#include <checkbox.h>
+#include <ti/grlib/grlib.h>
+#include <ti/grlib/checkbox.h>
 
 //*****************************************************************************
 //

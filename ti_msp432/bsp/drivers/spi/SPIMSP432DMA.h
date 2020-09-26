@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018, Texas Instruments Incorporated
+ * Copyright (c) 2015-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,7 +29,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-/** ============================================================================
+/*!***************************************************************************
  *  @file       SPIMSP432DMA.h
  *
  *  @brief      SPI driver implementation for a EUSCI peripheral on MSP432
@@ -37,8 +37,8 @@
  *
  *  The SPI header file should be included in an application as follows:
  *  @code
- *  #include <SPI.h>
- *  #include <spi/SPIMSP432DMA.h>
+ *  #include <ti/drivers/SPI.h>
+ *  #include <ti/drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *
  *  Refer to @ref SPI.h for a complete description of APIs & example of use.
@@ -88,18 +88,18 @@
  *  8 bits    | uint8_t             |
  *
  *  ## DMA operation #
- *  DMA use in this driver varies based on the SPI_TransferMode set when the
- *  driver instance was opened.  If the driver was opened in SPI_MODE_CALLBACK,
+ *  DMA use in this driver varies based on the #SPI_TransferMode set when the
+ *  driver instance was opened. If the driver was opened in #SPI_MODE_CALLBACK,
  *  all transfers make use of the DMA regardless of the amount of data.
  *
- *  If the driver was opened in SPI_MODE_BLOCKING, it verifies the amount of
- *  data frames to be transfered exceeds the minDmaTransferSize before
- *  performing a transfer using the DMA.  minDmaTransferSize (in the
- *  SPIMSP432DMA_HWAttrs) allows users to set a minimum amount of data frames
- *  a transfer must have to perform a transfer using the DMA.  If the amount of
- *  data is less than minDmaTransferSize, the driver performs a polling
- *  transfer (unless the device is a slave with a timeout configured).
- *  This feature is provided for situations where there is little
+ *  If the driver was opened in #SPI_MODE_BLOCKING, it verifies the amount of
+ *  data frames to be transfered exceeds the
+ *  SPIMSP432DMA_HwAttrsV1.minDmaTransferSize before performing a transfer using
+ *  the DMA.  SPIMSP432DMA_HwAttrsV1.minDmaTransferSize allows users to set a
+ *  minimum amount of data frames a transfer must have to perform a transfer
+ *  using the DMA.  If the amount of data is less than this limit, the driver
+ *  performs a polling transfer (unless the device is a slave with a timeout
+ *  configured). This feature is provided for situations where there is little
  *  data to be transfered & it is more efficient to simply perform a polling
  *  transfer instead of configuring the DMA & waiting until the task is
  *  unblocked.
@@ -119,15 +119,16 @@
  *
  *  ## DMA accessible memory #
  *
- *  Ensure that the txBuf and rxBuf (in ::SPI_Transaction) point to memory that
- *  is accessible by the DMA.
+ *  Ensure that the SPI_Transaction.rxBuf and SPI_Transaction.txBuf point to
+ *  memory that is accessible by the DMA.
  *
  *  ## Scratch Buffers #
- *  A uint8_t scratch buffer is used to allow SPI_transfers where txBuf or
+ *  A uint8_t scratch buffer is used to allow #SPI_Transaction where txBuf or
  *  rxBuf are NULL. Rather than requiring txBuf or rxBuf to have a dummy buffer
  *  of size of the transfer count, a single DMA accessible uint8_t scratch
  *  buffer is used. When txBuf is NULL, an internal scratch buffer is
- *  initialized to the defaultTxBufValue so the DMA will send some known value.
+ *  initialized to the SPIMSP432DMA_HwAttrsV1.defaultTxBufValue so the DMA will
+ *  send some known value.
  *
  *  ============================================================================
  */
@@ -141,13 +142,13 @@ extern "C" {
 
 #include <stdint.h>
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <Power.h>
-#include <SPI.h>
-#include <dma/UDMAMSP432.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/SPI.h>
+#include <ti/drivers/dma/UDMAMSP432.h>
 
 /*
  *  SPI port/pin defines for pin configuration.  Ports P2, P3, and P7 are
@@ -195,6 +196,11 @@ extern "C" {
  *  MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(port,
  *       pin, moduleFunction);
  *
+ */
+
+/*!
+ *  Prevent all these port defines from cluttering doxygen
+ *  @cond HIDDEN_DEFINES
  */
 
 /* Port 1 EUSCI A0 defines */
@@ -713,6 +719,8 @@ extern "C" {
 #define SPIMSP432DMA_P10_2_UCB3SIMO  0x000001A2  /* Primary, port 10, pin 2 */
 #define SPIMSP432DMA_P10_3_UCB3SOMI  0x000001A3  /* Primary, port 10, pin 3 */
 
+/*! @endcond */
+
 /*!
  * @brief SPIMSP432DMA_PIN_NO_CONFIG can be used to inform the SPIMSP432DMA
  * driver that a pin should not be configured for use in the SPI bus.
@@ -746,7 +754,7 @@ extern "C" {
  *  SPIMSP432DMA_STATUS_* macros are command codes only defined in the
  *  SPIMSP432DMA.h driver implementation and need to:
  *  @code
- *  #include <spi/SPIMSP432DMA.h>
+ *  #include <ti/drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *  @{
  */
@@ -760,7 +768,7 @@ extern "C" {
  *  SPIMSP432DMA_CMD_* macros are command codes only defined in the
  *  SPIMSP432DMA.h driver implementation and need to:
  *  @code
- *  #include <spi/SPIMSP432DMA.h>
+ *  #include <ti/drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *  @{
  */
@@ -778,8 +786,8 @@ extern const SPI_FxnTable SPIMSP432DMA_fxnTable;
  *  are used by driverlib APIs and therefore must be populated by
  *  driverlib macro definitions. For MSP432 driverlib these definitions are
  *  found in:
- *      - dma.h
- *      - spi.h
+ *      - .../source/ti/devices/\<device family\>/driverlib/dma.h
+ *      - .../source/ti/devices/\<device family\>/driverlib/spi.h
  *
  *  intPriority is the SPI peripheral's interrupt priority, as defined by the
  *  underlying OS.  It is passed unmodified to the underlying OS's interrupt

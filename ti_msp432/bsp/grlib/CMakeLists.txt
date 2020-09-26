@@ -8,8 +8,4 @@ project(grlib)
 # add the sources 
 file(GLOB_RECURSE LIB_SOURCES *.c)
 
-#add the subdirectories
-add_library(${PROJECT_NAME} OBJECT ${LIB_SOURCES})
-target_include_directories(${PROJECT_NAME} PUBLIC 
-                            ${CMAKE_CURRENT_SOURCE_DIR}
-                            ${CMAKE_CURRENT_SOURCE_DIR}/*)
+add_library(${PROJECT_NAME} ${LIB_SOURCES})

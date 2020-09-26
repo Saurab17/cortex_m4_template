@@ -37,8 +37,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ADCBuf.h>
-#include <dpl/HwiP.h>
+#include <ti/drivers/ADCBuf.h>
+#include <ti/drivers/dpl/HwiP.h>
 
 extern const ADCBuf_Config ADCBuf_config[];
 extern const uint_least8_t ADCBuf_count;

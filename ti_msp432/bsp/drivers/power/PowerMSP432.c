@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018, Texas Instruments Incorporated
+ * Copyright (c) 2015-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -47,28 +47,29 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
 
-#include <utils/List.h>
+#include <ti/drivers/utils/List.h>
 
-#include <Power.h>
-#include <power/PowerMSP432.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <wdt_a.h>
-#include <rtc_c.h>
-#include <pcm.h>
-#include <interrupt.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
+#include <ti/devices/msp432p4xx/driverlib/rtc_c.h>
+#include <ti/devices/msp432p4xx/driverlib/pcm.h>
+#include <ti/devices/msp432p4xx/driverlib/cs.h>
+#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
 
 #if DeviceFamily_ID == DeviceFamily_ID_MSP432P401x
 /* MSP432P401xx devices */
-#include <flash.h>
-#include <sysctl.h>
+#include <ti/devices/msp432p4xx/driverlib/flash.h>
+#include <ti/devices/msp432p4xx/driverlib/sysctl.h>
 #define SET_WAIT_STATES MAP_FlashCtl_setWaitState
 #define ENABLE_READ_BUFFERING MAP_FlashCtl_enableReadBuffering
 #define DISABLE_READ_BUFFERING MAP_FlashCtl_disableReadBuffering
@@ -82,8 +83,8 @@
 #define CSSRC 0x1
 #else
 /* MSP432P4x1xl devices */
-#include <flash_a.h>
-#include <sysctl_a.h>
+#include <ti/devices/msp432p4xx/driverlib/flash_a.h>
+#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
 #define SET_WAIT_STATES MAP_FlashCtl_A_setWaitState
 #define ENABLE_READ_BUFFERING MAP_FlashCtl_A_enableReadBuffering
 #define DISABLE_READ_BUFFERING MAP_FlashCtl_A_disableReadBuffering
@@ -891,7 +892,12 @@ int_fast16_t Power_setPerformanceLevel(uint_fast16_t level)
                 if (status == Power_SOK) {
 
                     /* now change clocks and dividers */
-                    MAP_CS_setDCOCenteredFrequency(perfNew.DCORESEL);
+                    if (perfNew.DCORESEL == CS_DCO_TUNE_FREQ) {
+                        MAP_CS_setDCOFrequency(perfNew.tuneFreqDCO);
+                    }
+                    else {
+                        MAP_CS_setDCOCenteredFrequency(perfNew.DCORESEL);
+                    }
                     MAP_CS_initClockSignal(CS_MCLK, perfNew.SELM, perfNew.DIVM);
                     MAP_CS_initClockSignal(CS_HSMCLK, perfNew.SELS,
                         perfNew.DIVHS);
@@ -1081,17 +1087,17 @@ int_fast16_t Power_sleep(uint_fast16_t sleepState)
 {
     int_fast16_t status = Power_SOK;
     uintptr_t eventArg = 0;
-    unsigned int preEvent = 0;
-    unsigned int postEvent = 0;
+    unsigned int preEvent;
+    unsigned int postEvent;
     uint8_t powerState;
     uint8_t targetState;
-    uint16_t savePAREN = 0;
-    uint16_t savePBREN = 0;
-    uint16_t savePCREN = 0;
-    uint16_t savePDREN = 0;
-    uint16_t savePEREN = 0;
-    uint16_t savePJREN = 0;
-    uint16_t currState = 0;
+    uint16_t savePAREN;
+    uint16_t savePBREN;
+    uint16_t savePCREN;
+    uint16_t savePDREN;
+    uint16_t savePEREN;
+    uint16_t savePJREN;
+    uint16_t currState;
     uint16_t tempOut;
     bool restoreHFXT;
     uint16_t mask;
@@ -1654,7 +1660,12 @@ static bool initPerfControl(unsigned int initLevel)
             }
 
             /* now setup clocks */
-            MAP_CS_setDCOCenteredFrequency(perfNew.DCORESEL);
+            if (perfNew.DCORESEL == CS_DCO_TUNE_FREQ) {
+                MAP_CS_setDCOFrequency(perfNew.tuneFreqDCO);
+            }
+            else {
+                MAP_CS_setDCOCenteredFrequency(perfNew.DCORESEL);
+            }
             MAP_CS_initClockSignal(CS_MCLK, perfNew.SELM, perfNew.DIVM);
             MAP_CS_initClockSignal(CS_HSMCLK, perfNew.SELS, perfNew.DIVHS);
             MAP_CS_initClockSignal(CS_SMCLK, perfNew.SELS, perfNew.DIVS);

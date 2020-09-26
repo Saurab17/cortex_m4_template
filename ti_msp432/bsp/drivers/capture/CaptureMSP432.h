@@ -73,8 +73,8 @@
  *  Below is an example CaptureMSP432_Object array appropriate for the MSP432
  *  LaunchPad board:
  *  @code
- *    #include <Capture.h>
- *    #include <capture/CaptureMSP432.h>
+ *    #include <ti/drivers/Capture.h>
+ *    #include <ti/drivers/capture/CaptureMSP432.h>
  *
  *    CaptureMSP432_Object captureMSP432Objects[2];
  *  @endcode
@@ -164,12 +164,12 @@ extern "C"
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <dpl/HwiP.h>
-#include <timer/TimerMSP432.h>
-#include <Capture.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/timer/TimerMSP432.h>
+#include <ti/drivers/Capture.h>
 
-#include <DeviceFamily.h>
-#include <interrupt.h>
+#include <ti/devices/DeviceFamily.h>
+#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
 
 /*! \cond */
 /*

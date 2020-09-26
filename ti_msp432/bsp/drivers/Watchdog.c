@@ -37,8 +37,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <Watchdog.h>
-#include <dpl/HwiP.h>
+#include <ti/drivers/Watchdog.h>
+#include <ti/drivers/dpl/HwiP.h>
 
 extern const Watchdog_Config Watchdog_config[];
 extern const uint_least8_t Watchdog_count;

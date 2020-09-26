@@ -44,19 +44,19 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
-#include <Power.h>
-#include <power/PowerMSP432.h>
-#include <Watchdog.h>
-#include <watchdog/WatchdogMSP432.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
+#include <ti/drivers/Watchdog.h>
+#include <ti/drivers/watchdog/WatchdogMSP432.h>
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <wdt_a.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
 
 /* Function prototypes */
 void WatchdogMSP432_clear(Watchdog_Handle handle);

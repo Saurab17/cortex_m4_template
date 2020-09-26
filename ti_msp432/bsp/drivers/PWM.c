@@ -37,8 +37,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <dpl/HwiP.h>
-#include <PWM.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/PWM.h>
 
 extern const PWM_Config PWM_config[];
 extern const uint_least8_t PWM_count;

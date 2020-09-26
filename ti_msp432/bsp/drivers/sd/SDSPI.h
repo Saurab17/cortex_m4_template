@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2018, Texas Instruments Incorporated
+ * Copyright (c) 2017-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,15 +29,15 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-/** ============================================================================
+/*!***************************************************************************
  *  @file       SDSPI.h
  *
  *  @brief      SD driver implementation built on the TI SPI driver.
  *
  *  The SDSPI header file should be included in an application as follows:
  *  @code
- *  #include <SD.h>
- *  #include <sd/SDSPI.h>
+ *  #include <ti/drivers/SD.h>
+ *  #include <ti/drivers/sd/SDSPI.h>
  *  @endcode
  *
  *  Refer to @ref SD.h for a complete description of APIs & example of use.
@@ -60,7 +60,7 @@
  *  accessibility requirements).  Refer to @ref SPI.h & the device specific
  *  SPI implementation header files for details.
  *
- *  ============================================================================
+ *  <hr>
  */
 
 #ifndef ti_drivers_sd_SDSPI__include
@@ -71,9 +71,9 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-#include <dpl/SemaphoreP.h>
-#include <SD.h>
-#include <SPI.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/SD.h>
+#include <ti/drivers/SPI.h>
 
 /* SDSPI function table */
 extern const SD_FxnTable SDSPI_fxnTable;
@@ -81,7 +81,7 @@ extern const SD_FxnTable SDSPI_fxnTable;
 /*!
  *  @brief  SDSPI Hardware attributes
  *
- *  The SDSPI HWAttrs configuration structure contains the index of the SPI
+ *  The #SDSPI_HWAttrs configuration structure contains the index of the SPI
  *  peripheral to be used for data transfers & the index of the GPIO Pin which
  *  will act as chip select.  This driver uses this information to:
  *      - configure & open the SPI driver instance for data transfers

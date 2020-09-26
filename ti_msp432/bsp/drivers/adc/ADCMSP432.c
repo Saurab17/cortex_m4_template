@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2017 Texas Instruments Incorporated
+ * Copyright (c) 2016-2019 Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -33,23 +33,23 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <ADC.h>
-#include <adc/ADCMSP432.h>
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <Power.h>
-#include <power/PowerMSP432.h>
+#include <ti/drivers/ADC.h>
+#include <ti/drivers/adc/ADCMSP432.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <adc14.h>
-#include <gpio.h>
-#include <interrupt.h>
-#include <ref_a.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/adc14.h>
+#include <ti/devices/msp432p4xx/driverlib/gpio.h>
+#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
 
 #define ALL_INTERRUPTS  (0xFFFFFFFFFFFFFFFF)
 
@@ -253,8 +253,20 @@ uint32_t ADCMSP432_convertToMicroVolts(ADC_Handle handle,
             break;
 
         case REF_A_VREF2_5V:
+            refMicroVolts = 2500000;
+            break;
+
+        case ADCMSP432_REF_VOLTAGE_EXT:
+            refMicroVolts = hwAttrs->refExtValue;
+            break;
+
+        case ADCMSP432_REF_VOLTAGE_EXT_BUF:
+            refMicroVolts = hwAttrs->refExtValue;
+            break;
+
         default:
             refMicroVolts = 2500000;
+
     }
 
     if (adcValue == 0x3FFF) {

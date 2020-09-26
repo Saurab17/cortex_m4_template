@@ -39,8 +39,8 @@
  *
  *  The UART header file should be included in an application as follows:
  *  @code
- *  #include <UART.h>
- *  #include <uart/UARTMSP432.h>
+ *  #include <ti/drivers/UART.h>
+ *  #include <ti/drivers/uart/UARTMSP432.h>
  *  @endcode
  *
  *  Refer to @ref UART.h for a complete description of APIs and example of use.
@@ -92,16 +92,16 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/ClockP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <Power.h>
-#include <UART.h>
-#include <utils/RingBuf.h>
+#include <ti/drivers/dpl/ClockP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/UART.h>
+#include <ti/drivers/utils/RingBuf.h>
 
-#include <msp.h>
+#include <ti/devices/msp432p4xx/inc/msp.h>
 
 #define UARTMSP432_P1_2_UCA0RXD  0x00000112  /* Primary, port 1, pin 2 */
 #define UARTMSP432_P1_3_UCA0TXD  0x00000113  /* Primary, port 1, pin 3 */
@@ -306,7 +306,7 @@ extern "C" {
  *  UARTMSP432_STATUS_* macros are command codes only defined in the
  *  UARTMSP432.h driver implementation and need to:
  *  @code
- *  #include <uart/UARTMSP432.h>
+ *  #include <ti/drivers/uart/UARTMSP432.h>
  *  @endcode
  *  @{
  */
@@ -320,7 +320,7 @@ extern "C" {
  *  UARTMSP432_CMD_* macros are command codes only defined in the
  *  UARTMSP432.h driver implementation and need to:
  *  @code
- *  #include <uart/UARTMSP432.h>
+ *  #include <ti/drivers/uart/UARTMSP432.h>
  *  @endcode
  *  @{
  */

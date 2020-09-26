@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018, Texas Instruments Incorporated
+ * Copyright (c) 2015-2019, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -44,22 +44,22 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <I2C.h>
-#include <i2c/I2CMSP432.h>
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <Power.h>
-#include <power/PowerMSP432.h>
+#include <ti/drivers/I2C.h>
+#include <ti/drivers/i2c/I2CMSP432.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <i2c.h>
-#include <gpio.h>
-#include <pmap.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/i2c.h>
+#include <ti/devices/msp432p4xx/driverlib/gpio.h>
+#include <ti/devices/msp432p4xx/driverlib/pmap.h>
 
 #define PinConfigValue(config) (((config) >> 10) & 0x1F)
 #define PinConfigModuleFunction(config) (((config) >> 8) & 0x3)
@@ -372,12 +372,15 @@ void I2CMSP432_close(I2C_Handle handle)
     /* Destruct driver resources */
     if (object->hwiHandle) {
         HwiP_delete(object->hwiHandle);
+        object->hwiHandle = NULL;
     }
     if (object->mutex) {
         SemaphoreP_delete(object->mutex);
+        object->mutex = NULL;
     }
     if (object->transferComplete) {
         SemaphoreP_delete(object->transferComplete);
+        object->transferComplete = NULL;
     }
 
     /* Remove power constraints */

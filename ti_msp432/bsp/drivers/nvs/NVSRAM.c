@@ -38,11 +38,11 @@
 #include <stdint.h>
 #include <string.h>
 
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
 
-#include <NVS.h>
-#include <nvs/NVSRAM.h>
+#include <ti/drivers/NVS.h>
+#include <ti/drivers/nvs/NVSRAM.h>
 
 static int_fast16_t checkEraseRange(NVS_Handle handle, size_t offset, size_t size);
 static int_fast16_t doErase(NVS_Handle handle, size_t offset, size_t size);

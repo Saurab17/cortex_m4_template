@@ -34,9 +34,9 @@
  *  Includes
  * -----------------------------------------------------------------------------
  */
-#include <Display.h>
-#include <DisplayExt.h>
-#include <grlib.h>
+#include <ti/display/Display.h>
+#include <ti/display/DisplayExt.h>
+#include <ti/grlib/grlib.h>
 
 #include <stddef.h>
 #include <stdint.h>

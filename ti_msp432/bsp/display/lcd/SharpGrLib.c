@@ -54,13 +54,13 @@
 //
 //*****************************************************************************
 
-#include <grlib.h>
-#include <SPI.h>
-#include <GPIO.h>
+#include <ti/grlib/grlib.h>
+#include <ti/drivers/SPI.h>
+#include <ti/drivers/GPIO.h>
 
-#include <dpl/ClockP.h>
+#include <ti/drivers/dpl/ClockP.h>
 
-#include <lcd/SharpGrLib.h>
+#include <ti/display/lcd/SharpGrLib.h>
 
 #define DELAY_US(i)    ClockP_usleep(i)
 

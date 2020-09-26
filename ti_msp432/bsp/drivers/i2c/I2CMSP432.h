@@ -38,8 +38,8 @@
  *  in I2C mode.  The I2CMSP432 header file should be included in an application
  *  as follows:
  *  @code
- *  #include <I2C.h>
- *  #include <I2CMSP432.h>
+ *  #include <ti/drivers/I2C.h>
+ *  #include <ti/drivers/I2CMSP432.h>
  *  @endcode
  *
  *  Refer to @ref I2C.h for a complete description of APIs & example of use.
@@ -62,10 +62,10 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <I2C.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <Power.h>
+#include <ti/drivers/I2C.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/Power.h>
 
 /*
  *  I2C port/pin defines for pin configuration.  Ports P2, P3, and P7 are
@@ -355,7 +355,7 @@ extern "C" {
  *  I2CMSP432_STATUS_* macros are command codes only defined in the
  *  I2CMSP432.h driver implementation and need to:
  *  @code
- *  #include <i2c/I2CMSP432.h>
+ *  #include <ti/drivers/i2c/I2CMSP432.h>
  *  @endcode
  *  @{
  */
@@ -369,7 +369,7 @@ extern "C" {
  *  I2CMSP432_CMD_* macros are command codes only defined in the
  *  I2CMSP432.h driver implementation and need to:
  *  @code
- *  #include <i2c/I2CMSP432.h>
+ *  #include <ti/drivers/i2c/I2CMSP432.h>
  *  @endcode
  *  @{
  */
@@ -403,7 +403,7 @@ typedef enum I2CMSP432_Mode {
  *  be used by the EUSCI.  These values are passed directly to driverlib APIs,
  *  and therefore must be populated by driverlib macro definitions, which are
  *  found in:
- *      - i2c.h
+ *      - driverlib/i2c.h
  *
  *  intPriority is the I2C interrupt priority.
  *  This driver uses the ti.dpl interface instead of making OS calls directly,

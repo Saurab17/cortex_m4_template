@@ -32,15 +32,15 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <rom.h>
-#include <rom_map.h>
-#include <dma.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/dma.h>
 
-#include <dma/UDMAMSP432.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
+#include <ti/drivers/dma/UDMAMSP432.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
 
 #define NUM_DMA_CHANNELS      (8)
 #define NUM_DMA_INTERRUPTS    (4)

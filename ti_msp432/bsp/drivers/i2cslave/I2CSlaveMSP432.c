@@ -44,23 +44,23 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <DeviceFamily.h>
+#include <ti/devices/DeviceFamily.h>
 
-#include <dpl/DebugP.h>
-#include <dpl/HwiP.h>
-#include <dpl/SemaphoreP.h>
-#include <I2CSlave.h>
-#include <i2cslave/I2CSlaveMSP432.h>
-#include <Power.h>
-#include <power/PowerMSP432.h>
+#include <ti/drivers/dpl/DebugP.h>
+#include <ti/drivers/dpl/HwiP.h>
+#include <ti/drivers/dpl/SemaphoreP.h>
+#include <ti/drivers/I2CSlave.h>
+#include <ti/drivers/i2cslave/I2CSlaveMSP432.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerMSP432.h>
 
 
 /* driverlib header files */
-#include <rom.h>
-#include <rom_map.h>
-#include <i2c.h>
-#include <gpio.h>
-#include <pmap.h>
+#include <ti/devices/msp432p4xx/driverlib/rom.h>
+#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
+#include <ti/devices/msp432p4xx/driverlib/i2c.h>
+#include <ti/devices/msp432p4xx/driverlib/gpio.h>
+#include <ti/devices/msp432p4xx/driverlib/pmap.h>
 
 #define PinConfigValue(config) (((config) >> 10) & 0x1F)
 #define PinConfigModuleFunction(config) (((config) >> 8) & 0x3)
