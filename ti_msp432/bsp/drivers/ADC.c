@@ -37,8 +37,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/ADC.h>
-#include <ti/drivers/dpl/HwiP.h>
+#include <drivers/ADC.h>
+#include <drivers/dpl/HwiP.h>
 
 extern const ADC_Config ADC_config[];
 extern const uint_least8_t ADC_count;

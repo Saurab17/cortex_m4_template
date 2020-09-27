@@ -33,9 +33,9 @@
  *  ======== NoRTOS.c ========
  */
 
-#include <ti/drivers/dpl/ClockP.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/ClockP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
 #include "NoRTOS.h"
 

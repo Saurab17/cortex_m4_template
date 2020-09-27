@@ -33,9 +33,9 @@
 #include <stdint.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/cpu.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <driverlib/debug.h>
+#include <driverlib/cpu.h>
+#include <driverlib/interrupt.h>
 
 
 //*****************************************************************************

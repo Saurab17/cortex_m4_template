@@ -34,8 +34,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/SD.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/SD.h>
 
 extern const SD_Config SD_config[];
 extern const uint_least8_t SD_count;

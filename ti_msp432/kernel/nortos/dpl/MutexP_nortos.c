@@ -36,8 +36,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/MutexP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/MutexP.h>
 
 typedef struct _MutexP_Config {
     uint32_t dummy;

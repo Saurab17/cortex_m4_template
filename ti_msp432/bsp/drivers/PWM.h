@@ -61,7 +61,7 @@
  *  @anchor ti_drivers_PWM_Synopsis_Code
  *  @code
  *  // Import PWM Driver definitions
- *  #include <ti/drivers/PWM.h>
+ *  #include <drivers/PWM.h>
  *
  *  PWM_Handle pwm;
  *  PWM_Params pwmParams;

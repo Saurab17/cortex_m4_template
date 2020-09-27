@@ -32,7 +32,7 @@
 #ifndef __SPLASH_IMAGE_H__
 #define __SPLASH_IMAGE_H__
 
-#include <ti/grlib/grlib.h>
+#include <grlib/grlib.h>
 
 // Reference to the image, for use by GrLib
 extern const Graphics_Image splashImage;

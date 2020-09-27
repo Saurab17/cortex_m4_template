@@ -39,7 +39,7 @@
 //
 //*****************************************************************************
 
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 #include <stdbool.h>
 #include <stdint.h>
 

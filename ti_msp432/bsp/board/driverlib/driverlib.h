@@ -33,53 +33,53 @@
 #define __DRIVERLIB__H_
 
 /* Common Modules */
-#include <ti/devices/msp432p4xx/driverlib/adc14.h>
-#include <ti/devices/msp432p4xx/driverlib/aes256.h>
-#include <ti/devices/msp432p4xx/driverlib/comp_e.h>
-#include <ti/devices/msp432p4xx/driverlib/cpu.h>
-#include <ti/devices/msp432p4xx/driverlib/crc32.h>
-#include <ti/devices/msp432p4xx/driverlib/cs.h>
-#include <ti/devices/msp432p4xx/driverlib/dma.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
-#include <ti/devices/msp432p4xx/driverlib/fpu.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/i2c.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/mpu.h>
-#include <ti/devices/msp432p4xx/driverlib/pcm.h>
-#include <ti/devices/msp432p4xx/driverlib/pmap.h>
-#include <ti/devices/msp432p4xx/driverlib/pss.h>
-#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
-#include <ti/devices/msp432p4xx/driverlib/reset.h>
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/rtc_c.h>
-#include <ti/devices/msp432p4xx/driverlib/spi.h>
-#include <ti/devices/msp432p4xx/driverlib/systick.h>
-#include <ti/devices/msp432p4xx/driverlib/timer32.h>
-#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
-#include <ti/devices/msp432p4xx/driverlib/uart.h>
-#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
+#include <driverlib/adc14.h>
+#include <driverlib/aes256.h>
+#include <driverlib/comp_e.h>
+#include <driverlib/cpu.h>
+#include <driverlib/crc32.h>
+#include <driverlib/cs.h>
+#include <driverlib/dma.h>
+#include <driverlib/eusci.h>
+#include <driverlib/fpu.h>
+#include <driverlib/gpio.h>
+#include <driverlib/i2c.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/mpu.h>
+#include <driverlib/pcm.h>
+#include <driverlib/pmap.h>
+#include <driverlib/pss.h>
+#include <driverlib/ref_a.h>
+#include <driverlib/reset.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/rtc_c.h>
+#include <driverlib/spi.h>
+#include <driverlib/systick.h>
+#include <driverlib/timer32.h>
+#include <driverlib/timer_a.h>
+#include <driverlib/uart.h>
+#include <driverlib/wdt_a.h>
 
 /* Device specific modules */
 #if defined(__MCU_HAS_SYSCTL_A__)
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
+#include <driverlib/sysctl_a.h>
 #endif
 
 #if defined(__MCU_HAS_SYSCTL__)
-#include <ti/devices/msp432p4xx/driverlib/sysctl.h>
+#include <driverlib/sysctl.h>
 #endif
 
 #if defined(__MCU_HAS_FLCTL_A__)
-#include <ti/devices/msp432p4xx/driverlib/flash_a.h>
+#include <driverlib/flash_a.h>
 #endif
 
 #if defined(__MCU_HAS_FLCTL__)
-#include <ti/devices/msp432p4xx/driverlib/flash.h>
+#include <driverlib/flash.h>
 #endif
 
 #if defined(__MCU_HAS_LCD_F__)
-#include <ti/devices/msp432p4xx/driverlib/lcd_f.h>
+#include <driverlib/lcd_f.h>
 #endif
 
 /* Offset Definitions */

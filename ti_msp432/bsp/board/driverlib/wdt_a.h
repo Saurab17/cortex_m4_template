@@ -51,7 +51,7 @@ extern "C"
 #endif
 
 /* Includes */
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 #include <stdint.h>
 
 #ifdef __MCU_HAS_SYSCTL_A__

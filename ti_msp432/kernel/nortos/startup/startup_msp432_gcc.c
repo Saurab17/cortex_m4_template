@@ -43,9 +43,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include <ti/devices/DeviceFamily.h>
-#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <DeviceFamily.h>
+#include <driverlib/driverlib.h>
+#include <driverlib/interrupt.h>
 
 //*****************************************************************************
 //

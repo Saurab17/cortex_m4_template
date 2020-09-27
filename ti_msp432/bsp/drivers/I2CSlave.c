@@ -38,8 +38,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/I2CSlave.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/I2CSlave.h>
 
 extern const I2CSlave_Config I2CSlave_config[];
 extern const uint_least8_t I2CSlave_count;

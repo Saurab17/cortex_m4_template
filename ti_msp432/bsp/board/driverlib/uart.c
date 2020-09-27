@@ -29,10 +29,10 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/uart.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
+#include <driverlib/uart.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
+#include <driverlib/eusci.h>
 
 bool UART_initModule(uint32_t moduleInstance, const eUSCI_UART_Config *config)
 {

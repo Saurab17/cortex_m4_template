@@ -80,15 +80,15 @@
  *  `DisplayUart_SCROLLING` line specifier is used, any line number can be used,
  *  also those nominally inside the scrolling region.
  *
- *  There is also a helper file <ti/display/AnsiColor.h> with a macro to set the
+ *  There is also a helper file <display/AnsiColor.h> with a macro to set the
  *  color and style of the text.
  *
  *  # Usage Example #
  *
  *  @code
- *  #include <ti/display/Display.h>
- *  #include <ti/display/DisplayUart.h>
- *  #include <ti/display/AnsiColor.h>
+ *  #include <display/Display.h>
+ *  #include <display/DisplayUart.h>
+ *  #include <display/AnsiColor.h>
  *
  *  #define MAXPRINTLEN 128
  *
@@ -128,9 +128,9 @@
 #ifndef ti_display_DisplayUart__include
 #define ti_display_DisplayUart__include
 
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/UART.h>
-#include <ti/display/Display.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/UART.h>
+#include <display/Display.h>
 #include <stdint.h>
 
 /* Ensure backwards compatibility. Old examples will use Minimal. */

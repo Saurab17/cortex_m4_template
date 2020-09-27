@@ -37,8 +37,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/I2C.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/I2C.h>
 
 extern const I2C_Config I2C_config[];
 extern const uint_least8_t I2C_count;

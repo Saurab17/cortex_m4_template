@@ -39,7 +39,7 @@
 extern "C" {
 #endif
 
-#include <ti/drivers/Board.h>
+#include <drivers/Board.h>
 
 #define Board_initGeneral()     Board_init()  /* deprecated */
 

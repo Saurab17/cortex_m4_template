@@ -29,10 +29,10 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/spi.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
+#include <driverlib/spi.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
+#include <driverlib/eusci.h>
 
 static bool is_A_Module(uint32_t module)
 {

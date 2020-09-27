@@ -55,7 +55,7 @@
  *  @anchor ti_drivers_I2CSlave_Synopsis_Code
  *  @code
  *  // Import I2C Slave Driver definitions
- *  #include <ti/drivers/I2CSlave.h>
+ *  #include <drivers/I2CSlave.h>
  *
  *  // Define name for an index of an I2C Slave
  *  #define MASTER_BUS 0

@@ -54,7 +54,7 @@
  *  @anchor ti_drivers_ADC_Synopsis_Code
  *  @code
  *  // Import ADC Driver definitions
- *  #include <ti/drivers/ADC.h>
+ *  #include <drivers/ADC.h>
  *
  *  // Define name for ADC channel index
  *  #define THERMOCOUPLE_OUT  0

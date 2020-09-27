@@ -38,8 +38,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/SPI.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/SPI.h>
 
 extern const SPI_Config SPI_config[];
 extern const uint_least8_t SPI_count;

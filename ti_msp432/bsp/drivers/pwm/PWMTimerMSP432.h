@@ -36,8 +36,8 @@
  *
  * The PWM header file should be included in an application as follows:
  * @code
- * #include <ti/drivers/PWM.h>
- * #include <ti/drivers/pwm/PWMTimerMSP432.h>
+ * #include <drivers/PWM.h>
+ * #include <drivers/pwm/PWMTimerMSP432.h>
  * @endcode
  *
  * *  Refer to @ref PWM.h for a complete description of APIs & example of use.
@@ -90,8 +90,8 @@
  *  Below is an example PWMTimerMSP432_Object array appropriate for the MSP432
  *  LaunchPad board:
  *  @code
- *    #include <ti/drivers/PWM.h>
- *    #include <ti/drivers/pwm/PWMTimerMSP432.h>
+ *    #include <drivers/PWM.h>
+ *    #include <drivers/pwm/PWMTimerMSP432.h>
  *
  *    PWMTimerMSP432_Object pwmTimerMSP432Objects[2];
  *  @endcode
@@ -196,13 +196,13 @@ extern "C" {
 
 #include <stdbool.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/Power.h>
-#include <ti/drivers/PWM.h>
+#include <drivers/Power.h>
+#include <drivers/PWM.h>
 
-#include <ti/devices/msp432p4xx/driverlib/pmap.h>
-#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
+#include <driverlib/pmap.h>
+#include <driverlib/timer_a.h>
 
 /*! \cond */
 /*
@@ -668,7 +668,7 @@ extern "C" {
  *  PWMTimerMSP432_STATUS_* macros are command codes only defined in the
  *  PWMTimerMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/pwm/PWMTimerMSP432.h>
+ *  #include <drivers/pwm/PWMTimerMSP432.h>
  *  @endcode
  *  @{
  */
@@ -682,7 +682,7 @@ extern "C" {
  *  PWMTimerMSP432_CMD_* macros are command codes only defined in the
  *  PWMTimerMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/pwm/PWMTimerMSP432.h>
+ *  #include <drivers/pwm/PWMTimerMSP432.h>
  *  @endcode
  *  @{
  */

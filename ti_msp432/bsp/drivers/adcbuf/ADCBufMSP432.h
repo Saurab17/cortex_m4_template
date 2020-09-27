@@ -45,15 +45,15 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/devices/DeviceFamily.h>
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
-#include <ti/drivers/ADCBuf.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
-#include <ti/drivers/dma/UDMAMSP432.h>
+#include <DeviceFamily.h>
+#include <driverlib/sysctl_a.h>
+#include <drivers/ADCBuf.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
+#include <drivers/dma/UDMAMSP432.h>
 
-#include <ti/devices/msp432p4xx/driverlib/adc14.h>
+#include <driverlib/adc14.h>
 
 #ifdef __cplusplus
 extern "C" {

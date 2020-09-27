@@ -33,7 +33,7 @@
  *  ======== posix_sleep.c ========
  */
 
-#include <ti/drivers/dpl/ClockP.h>
+#include <drivers/dpl/ClockP.h>
 
 /*
  *  ======== sleep ========

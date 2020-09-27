@@ -34,7 +34,7 @@
  *  Includes
  * -----------------------------------------------------------------------------
  */
-#include <ti/display/Display.h>
+#include <display/Display.h>
 #include <stdarg.h>
 #include <stdint.h>
 
@@ -49,7 +49,7 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <ti/drivers/dpl/DebugP.h>
+#include <drivers/dpl/DebugP.h>
 
 /* -----------------------------------------------------------------------------
  *  Externs

@@ -56,7 +56,7 @@
  *  @anchor ti_drivers_ADCBuf_Synopsis_Code
  *  @code
  *  // Import ADCBuf Driver definitions
- *  #include <ti/drivers/ADCBuf.h>
+ *  #include <drivers/ADCBuf.h>
  *
  *  // Define name for ADCBuf channel index
  *  #define PIEZOMETER_OUT    0

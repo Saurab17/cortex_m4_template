@@ -34,9 +34,9 @@
 #include <stdbool.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/adc14.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <driverlib/adc14.h>
+#include <driverlib/debug.h>
+#include <driverlib/interrupt.h>
 
 /* Statics */
 static volatile uint32_t* const _ctlRegs[32] =

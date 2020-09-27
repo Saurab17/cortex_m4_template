@@ -55,9 +55,9 @@
  *  in this extension become usable.
  *
  *  @code
- *  #include <ti/display/Display.h>
- *  #include <ti/display/DisplayExt.h>
- *  #include <ti/grlib/grlib.h>
+ *  #include <display/Display.h>
+ *  #include <display/DisplayExt.h>
+ *  #include <grlib/grlib.h>
  *
  *  //...
  *  Display_Handle    handle;
@@ -119,8 +119,8 @@
 extern "C" {
 #endif
 
-#include <ti/display/Display.h>
-#include <ti/grlib/grlib.h>
+#include <display/Display.h>
+#include <grlib/grlib.h>
 
 /* -----------------------------------------------------------------------------
  *                                          Constants

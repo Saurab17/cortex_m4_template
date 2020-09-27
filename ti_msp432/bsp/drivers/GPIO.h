@@ -36,7 +36,7 @@
  *
  *  The GPIO header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/GPIO.h>
+ *  #include <drivers/GPIO.h>
  *  @endcode
  *
  *  # Overview #
@@ -61,7 +61,7 @@
  *  @anchor ti_drivers_GPIO_Synopsis_Code
  *  @code
  *  // Import GPIO Driver definitions
- *  #include <ti/drivers/GPIO.h>
+ *  #include <drivers/GPIO.h>
  *
  *  // Define names for GPIO pin indexes
  *  #define BUTTON 0
@@ -88,7 +88,7 @@
  *  an LED on and off within the registered interrupt callback function.
  *  @code
  *  // Driver header file
- *  #include <ti/drivers/GPIO.h>
+ *  #include <drivers/GPIO.h>
  *
  *  // Portable user-defined board-level symbols
  *  #include "Board.h"
@@ -132,7 +132,7 @@
  *  to (re)configure GPIO pins.
  *  @code
  *  // Driver header file
- *  #include <ti/drivers/GPIO.h>
+ *  #include <drivers/GPIO.h>
  *
  *  // Portable board-level symbols
  *  #include "Board.h"

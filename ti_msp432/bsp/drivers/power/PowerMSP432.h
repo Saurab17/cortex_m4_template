@@ -35,8 +35,8 @@
  *
  *  The Power header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/Power.h>
- *  #include <ti/drivers/power/PowerMSP432.h>
+ *  #include <drivers/Power.h>
+ *  #include <drivers/power/PowerMSP432.h>
  *  @endcode
  *
  *  Refer to @ref Power.h for a complete description of APIs.
@@ -49,8 +49,8 @@
 
 #include <stdint.h>
 
-#include <ti/drivers/utils/List.h>
-#include <ti/drivers/Power.h>
+#include <drivers/utils/List.h>
+#include <drivers/Power.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -268,8 +268,8 @@ extern "C" {
  *  and pcm.h
  *
  *  @code
- *  #include <ti/devices/msp432p4xx/driverlib/cs.h>
- *  #include <ti/devices/msp432p4xx/driverlib/pcm.h>
+ *  #include <driverlib/cs.h>
+ *  #include <driverlib/pcm.h>
  *  @endcode
  *
  *  Next, add an array with two new performance levels:

@@ -52,8 +52,8 @@ extern "C"
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
+#include <msp.h>
+#include <driverlib/eusci.h>
 
 /* Configuration Defines */
 #define EUSCI_SPI_CLOCKSOURCE_ACLK    EUSCI_B_CTLW0_SSEL__ACLK

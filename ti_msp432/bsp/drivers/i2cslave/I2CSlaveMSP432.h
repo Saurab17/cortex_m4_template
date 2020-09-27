@@ -39,8 +39,8 @@
  *  controller in I2CSlave mode.  The I2CSlaveMSP432 header file should be
  *  included in an application as follows:
  *  @code
- *  #include <ti/drivers/I2CSlave.h>
- *  #include <ti/drivers/I2CSlaveMSP432.h>
+ *  #include <drivers/I2CSlave.h>
+ *  #include <drivers/I2CSlaveMSP432.h>
  *  @endcode
  *
  *  ============================================================================
@@ -56,11 +56,11 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/drivers/I2CSlave.h>
+#include <drivers/I2CSlave.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
 
 /*
  *  I2CSlave port/pin defines for pin configuration.  Ports P2, P3, and P7 are
@@ -273,7 +273,7 @@ extern "C" {
  *  I2CSLAVEMSP432_STATUS_* macros are command codes only defined in the
  *  I2CSlaveMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/i2cslave/I2CSlaveMSP432.h>
+ *  #include <drivers/i2cslave/I2CSlaveMSP432.h>
  *  @endcode
  *  @{
  */
@@ -287,7 +287,7 @@ extern "C" {
  *  I2CSLAVEMSP432_CMD_* macros are command codes only defined in the
  *  I2CSlaveMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/i2cslave/I2CSlaveMSP432.h>
+ *  #include <drivers/i2cslave/I2CSlaveMSP432.h>
  *  @endcode
  *  @{
  */

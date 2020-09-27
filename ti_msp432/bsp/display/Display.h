@@ -67,7 +67,7 @@
  *  @anchor ti_drivers_Display_Synopsis_Code
  *  @code
  *  // Import Display Driver definitions
- *  #include <ti/display/Display.h>
+ *  #include <display/Display.h>
  *  
  *  // Initialize optional Display parameters
  *  Display_Handle    handle;
@@ -122,8 +122,8 @@
  *  ## Configuring the HOST Display
  *  
  *  @code
- *  #include <ti/display/Display.h>
- *  #include <ti/display/DisplayHost.h>
+ *  #include <display/Display.h>
+ *  #include <display/DisplayHost.h>
  *
  *  #define MAXPRINTLEN 1024
  *

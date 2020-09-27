@@ -37,9 +37,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/dpl/HwiP.h>
+#include <drivers/dpl/HwiP.h>
 
 #include "TimerP.h"
 

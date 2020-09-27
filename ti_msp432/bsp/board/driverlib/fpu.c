@@ -29,7 +29,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/fpu.h>
+#include <driverlib/fpu.h>
 
 void FPU_enableModule(void)
 {

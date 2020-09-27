@@ -69,7 +69,7 @@
  *  @anchor ti_drivers_NVS_Synopsis_Code
  *  @code
  *  // Import NVS Driver definitions
- *  #include <ti/drivers/NVS.h>
+ *  #include <drivers/NVS.h>
  *
  *  // One time init of NVS driver
  *  NVS_init();
@@ -118,7 +118,7 @@
  *  @code
  *
  *      // Import NVS Driver definitions
- *      #include <ti/drivers/NVS.h>
+ *      #include <drivers/NVS.h>
  *
  *      NVS_Handle nvsRegion;
  *      NVS_Attrs regionAttrs;

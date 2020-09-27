@@ -52,8 +52,8 @@ extern "C"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
+#include <msp.h>
+#include <driverlib/eusci.h>
 
 #define EUSCI_B_I2C_NO_AUTO_STOP                           EUSCI_B_CTLW1_ASTP_0
 #define EUSCI_B_I2C_SET_BYTECOUNT_THRESHOLD_FLAG           EUSCI_B_CTLW1_ASTP_1

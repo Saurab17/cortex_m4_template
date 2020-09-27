@@ -29,9 +29,9 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/aes256.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/aes256.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
 
 bool AES256_setCipherKey(uint32_t moduleInstance, const uint8_t * cipherKey,
         uint_fast16_t keyLength)

@@ -36,8 +36,8 @@
 #include "spiffs.h"
 #include "SPIFFSNVS.h"
 
-#include <ti/drivers/NVS.h>
-#include <ti/drivers/dpl/MutexP.h>
+#include <drivers/NVS.h>
+#include <drivers/dpl/MutexP.h>
 
 static s32_t spiffs_hal_erase(spiffs *fs, u32_t addr, u32_t size);
 static s32_t spiffs_hal_read(spiffs *fs, u32_t addr, u32_t size, u8_t *dst);

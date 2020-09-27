@@ -32,19 +32,19 @@
 
 #include <stdint.h>
 
-#include <ti/drivers/Capture.h>
-#include <ti/drivers/Power.h>
+#include <drivers/Capture.h>
+#include <drivers/Power.h>
 
-#include <ti/drivers/capture/CaptureMSP432.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/timer/TimerMSP432.h>
-#include <ti/drivers/power/PowerMSP432.h>
+#include <drivers/capture/CaptureMSP432.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/timer/TimerMSP432.h>
+#include <drivers/power/PowerMSP432.h>
 
-#include <ti/devices/DeviceFamily.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/pmap.h>
-#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
+#include <DeviceFamily.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/gpio.h>
+#include <driverlib/pmap.h>
+#include <driverlib/timer_a.h>
 
 #define getCompareRegister(port) (((port) >> CAPTUREMSP432_CCR_OFS) & 0xF)
 #define getIntNum(port)          (((port) >> CAPTUREMSP432_INT_OFS) & 0xFF)

@@ -50,10 +50,10 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/drivers/ADC.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
+#include <drivers/ADC.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
 
 /*
  *  ADC port/pin defines for pin configuration.  Ports P2, P3, and P7 are

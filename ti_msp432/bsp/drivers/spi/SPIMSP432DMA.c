@@ -32,21 +32,21 @@
 
 #include <stdint.h>
 
-#include <ti/devices/DeviceFamily.h>
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/dma.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/pmap.h>
-#include <ti/devices/msp432p4xx/driverlib/spi.h>
+#include <DeviceFamily.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/dma.h>
+#include <driverlib/gpio.h>
+#include <driverlib/pmap.h>
+#include <driverlib/spi.h>
 
-#include <ti/drivers/dma/UDMAMSP432.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
-#include <ti/drivers/power/PowerMSP432.h>
-#include <ti/drivers/SPI.h>
-#include <ti/drivers/spi/SPIMSP432DMA.h>
+#include <drivers/dma/UDMAMSP432.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
+#include <drivers/power/PowerMSP432.h>
+#include <drivers/SPI.h>
+#include <drivers/spi/SPIMSP432DMA.h>
 
 #define MAX_DMA_TRANSFER_AMOUNT         (1024)
 

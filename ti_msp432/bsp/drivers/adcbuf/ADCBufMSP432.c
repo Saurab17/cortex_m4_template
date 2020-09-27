@@ -46,32 +46,32 @@
 
 #define MAX_ADC_FREQ 25000000
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/ADCBuf.h>
-#include <ti/drivers/adcbuf/ADCBufMSP432.h>
-#include <ti/drivers/timer/TimerMSP432.h>
-#include <ti/drivers/dpl/DebugP.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
-#include <ti/drivers/power/PowerMSP432.h>
+#include <drivers/ADCBuf.h>
+#include <drivers/adcbuf/ADCBufMSP432.h>
+#include <drivers/timer/TimerMSP432.h>
+#include <drivers/dpl/DebugP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
+#include <drivers/power/PowerMSP432.h>
 
 /* driverlib header files */
-#include <ti/devices/msp432p4xx/driverlib/adc14.h>
-#include <ti/devices/msp432p4xx/driverlib/cs.h>
-#include <ti/devices/msp432p4xx/driverlib/dma.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
+#include <driverlib/adc14.h>
+#include <driverlib/cs.h>
+#include <driverlib/dma.h>
+#include <driverlib/gpio.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/ref_a.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/timer_a.h>
 #if DeviceFamily_ID == DeviceFamily_ID_MSP432P401x
 /* MSP432P401xx devices */
-#include <ti/devices/msp432p4xx/driverlib/sysctl.h>
+#include <driverlib/sysctl.h>
 #else
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
+#include <driverlib/sysctl_a.h>
 #endif
 #define ALL_INTERRUPTS  (0xFFFFFFFFFFFFFFFF)
 #define MAX_ADC_TRIGGER_SOURCE (7)

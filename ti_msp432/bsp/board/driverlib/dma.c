@@ -31,9 +31,9 @@
  * --/COPYRIGHT--*/
 #include <stdint.h>
 
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/dma.h>
+#include <driverlib/debug.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/dma.h>
 
 void DMA_enableModule(void)
 {

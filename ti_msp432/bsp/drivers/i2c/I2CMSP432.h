@@ -38,8 +38,8 @@
  *  in I2C mode.  The I2CMSP432 header file should be included in an application
  *  as follows:
  *  @code
- *  #include <ti/drivers/I2C.h>
- *  #include <ti/drivers/I2CMSP432.h>
+ *  #include <drivers/I2C.h>
+ *  #include <drivers/I2CMSP432.h>
  *  @endcode
  *
  *  Refer to @ref I2C.h for a complete description of APIs & example of use.
@@ -62,10 +62,10 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/drivers/I2C.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
+#include <drivers/I2C.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
 
 /*
  *  I2C port/pin defines for pin configuration.  Ports P2, P3, and P7 are
@@ -355,7 +355,7 @@ extern "C" {
  *  I2CMSP432_STATUS_* macros are command codes only defined in the
  *  I2CMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/i2c/I2CMSP432.h>
+ *  #include <drivers/i2c/I2CMSP432.h>
  *  @endcode
  *  @{
  */
@@ -369,7 +369,7 @@ extern "C" {
  *  I2CMSP432_CMD_* macros are command codes only defined in the
  *  I2CMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/i2c/I2CMSP432.h>
+ *  #include <drivers/i2c/I2CMSP432.h>
  *  @endcode
  *  @{
  */

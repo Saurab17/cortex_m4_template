@@ -36,8 +36,8 @@
  *
  *  The SDSPI header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/SD.h>
- *  #include <ti/drivers/sd/SDSPI.h>
+ *  #include <drivers/SD.h>
+ *  #include <drivers/sd/SDSPI.h>
  *  @endcode
  *
  *  Refer to @ref SD.h for a complete description of APIs & example of use.
@@ -71,9 +71,9 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/SD.h>
-#include <ti/drivers/SPI.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/SD.h>
+#include <drivers/SPI.h>
 
 /* SDSPI function table */
 extern const SD_FxnTable SDSPI_fxnTable;

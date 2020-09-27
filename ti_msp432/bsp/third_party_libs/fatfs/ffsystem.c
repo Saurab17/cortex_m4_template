@@ -38,7 +38,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
 #include "ff.h"
 

@@ -130,7 +130,7 @@
  *                                                            @@@@@@@@@
  */
 
-#include <ti/grlib/grlib.h>
+#include <grlib/grlib.h>
 
 uint32_t imgPalette[] = {0, 0xFFFFFF};
 

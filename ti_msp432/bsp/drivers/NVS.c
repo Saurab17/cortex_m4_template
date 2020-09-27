@@ -38,8 +38,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/NVS.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/NVS.h>
 
 extern NVS_Config NVS_config[];
 extern const uint8_t NVS_count;

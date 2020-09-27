@@ -35,16 +35,16 @@
  * -----------------------------------------------------------------------------
  */
 
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/dpl/SystemP.h>
-#include <ti/drivers/SPI.h>
-#include <ti/drivers/GPIO.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/SystemP.h>
+#include <drivers/SPI.h>
+#include <drivers/GPIO.h>
 
-#include <ti/grlib/grlib.h>
-#include <ti/display/Display.h>
+#include <grlib/grlib.h>
+#include <display/Display.h>
 
-#include <ti/display/DisplaySharp.h>
-#include <ti/display/lcd/SharpGrLib.h>
+#include <display/DisplaySharp.h>
+#include <display/lcd/SharpGrLib.h>
 
 /* -----------------------------------------------------------------------------
  *  Constants and macros

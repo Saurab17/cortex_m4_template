@@ -58,7 +58,7 @@
  *  @anchor ti_drivers_I2C_Synopsis_Code
  *  @code
  *  // Import I2C Driver definitions
- *  #include <ti/drivers/I2C.h>
+ *  #include <drivers/I2C.h>
  *
  *  // Define name for an index of an I2C bus
  *  #define SENSORS 0

@@ -33,8 +33,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/Timer.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/Timer.h>
 
 extern const Timer_Config Timer_config[];
 extern const uint_least8_t Timer_count;

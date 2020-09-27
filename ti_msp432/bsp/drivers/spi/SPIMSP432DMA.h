@@ -37,8 +37,8 @@
  *
  *  The SPI header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/SPI.h>
- *  #include <ti/drivers/spi/SPIMSP432DMA.h>
+ *  #include <drivers/SPI.h>
+ *  #include <drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *
  *  Refer to @ref SPI.h for a complete description of APIs & example of use.
@@ -142,13 +142,13 @@ extern "C" {
 
 #include <stdint.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/Power.h>
-#include <ti/drivers/SPI.h>
-#include <ti/drivers/dma/UDMAMSP432.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
+#include <drivers/SPI.h>
+#include <drivers/dma/UDMAMSP432.h>
 
 /*
  *  SPI port/pin defines for pin configuration.  Ports P2, P3, and P7 are
@@ -754,7 +754,7 @@ extern "C" {
  *  SPIMSP432DMA_STATUS_* macros are command codes only defined in the
  *  SPIMSP432DMA.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/spi/SPIMSP432DMA.h>
+ *  #include <drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *  @{
  */
@@ -768,7 +768,7 @@ extern "C" {
  *  SPIMSP432DMA_CMD_* macros are command codes only defined in the
  *  SPIMSP432DMA.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/spi/SPIMSP432DMA.h>
+ *  #include <drivers/spi/SPIMSP432DMA.h>
  *  @endcode
  *  @{
  */
@@ -786,8 +786,8 @@ extern const SPI_FxnTable SPIMSP432DMA_fxnTable;
  *  are used by driverlib APIs and therefore must be populated by
  *  driverlib macro definitions. For MSP432 driverlib these definitions are
  *  found in:
- *      - .../source/ti/devices/\<device family\>/driverlib/dma.h
- *      - .../source/ti/devices/\<device family\>/driverlib/spi.h
+ *      - .../source/\<device family\>/driverlib/dma.h
+ *      - .../source/\<device family\>/driverlib/spi.h
  *
  *  intPriority is the SPI peripheral's interrupt priority, as defined by the
  *  underlying OS.  It is passed unmodified to the underlying OS's interrupt

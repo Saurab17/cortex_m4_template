@@ -29,9 +29,9 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/timer32.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/timer32.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
 
 void Timer32_initModule(uint32_t timer, uint32_t preScaler, uint32_t resolution,
         uint32_t mode)

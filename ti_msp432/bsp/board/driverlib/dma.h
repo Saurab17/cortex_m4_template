@@ -51,8 +51,8 @@ extern "C"
 #endif
 
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <msp.h>
+#include <driverlib/interrupt.h>
 
 //*****************************************************************************
 //

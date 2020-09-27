@@ -35,12 +35,12 @@
 
 #include <stdlib.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/dpl/ClockP.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/dpl/SwiP.h>
+#include <drivers/dpl/ClockP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/SwiP.h>
 
 #include "QueueP.h"
 #include "TimerP.h"

@@ -36,10 +36,10 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SwiP.h>
-#include <ti/drivers/Power.h>
-#include <ti/drivers/power/PowerMSP432.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SwiP.h>
+#include <drivers/Power.h>
+#include <drivers/power/PowerMSP432.h>
 
 extern PowerMSP432_ModuleState PowerMSP432_module;
 

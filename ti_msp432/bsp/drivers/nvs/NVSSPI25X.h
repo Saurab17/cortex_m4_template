@@ -194,7 +194,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/drivers/SPI.h>
+#include <drivers/SPI.h>
 
 #if defined (__cplusplus)
 extern "C" {

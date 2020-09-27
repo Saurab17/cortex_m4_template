@@ -34,8 +34,8 @@
 #include <stdbool.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/sysctl_a.h>
+#include <driverlib/debug.h>
 
 /* Define to ensure that our current MSP432 has the SYSCTL_A module. This
     definition is included in the device specific header file */

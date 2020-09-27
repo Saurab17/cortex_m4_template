@@ -36,15 +36,15 @@
 #include <stdlib.h>
 
 /* Driver lib includes */
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-//#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+//#include <msp.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/interrupt.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/DebugP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/DebugP.h>
 
 #define MAX_INTERRUPTS 80
 #define NVIC_INT_CTRL_REG (*((volatile uint32_t *)0xe000ed04))

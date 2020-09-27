@@ -36,7 +36,7 @@
  *  To use the UART driver, ensure that the correct driver library for your
  *  device is linked in and include this header file as follows:
  *  @code
- *  #include <ti/drivers/UART.h>
+ *  #include <drivers/UART.h>
  *  @endcode
  *
  *  This module serves as the main interface for applications.  Its purpose
@@ -71,7 +71,7 @@
  *  @anchor ti_drivers_UART_Synopsis_Code
  *  @code
  *  // Import the UART driver definitions
- *  #include <ti/drivers/UART.h>
+ *  #include <drivers/UART.h>
  *
  *  // One-time initialization of UART driver
  *  UART_init();

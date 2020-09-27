@@ -44,34 +44,34 @@
 #define DeviceFamily_MSP432P401x
 #endif
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/Power.h>
-#include <ti/drivers/power/PowerMSP432.h>
+#include <drivers/Power.h>
+#include <drivers/power/PowerMSP432.h>
 
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/adc14.h>
-#include <ti/devices/msp432p4xx/driverlib/dma.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/i2c.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/pmap.h>
-#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
-#include <ti/devices/msp432p4xx/driverlib/spi.h>
-#include <ti/devices/msp432p4xx/driverlib/timer_a.h>
-#include <ti/devices/msp432p4xx/driverlib/timer32.h>
-#include <ti/devices/msp432p4xx/driverlib/uart.h>
-#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
+#include <msp.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/adc14.h>
+#include <driverlib/dma.h>
+#include <driverlib/gpio.h>
+#include <driverlib/i2c.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/pmap.h>
+#include <driverlib/ref_a.h>
+#include <driverlib/spi.h>
+#include <driverlib/timer_a.h>
+#include <driverlib/timer32.h>
+#include <driverlib/uart.h>
+#include <driverlib/wdt_a.h>
 
 #include "MSP_EXP432P401R.h"
 
 /*
  *  =============================== ADC ===============================
  */
-#include <ti/drivers/ADC.h>
-#include <ti/drivers/adc/ADCMSP432.h>
+#include <drivers/ADC.h>
+#include <drivers/adc/ADCMSP432.h>
 
 /* ADC objects */
 ADCMSP432_Object adcMSP432Objects[MSP_EXP432P401R_ADCCOUNT];
@@ -108,8 +108,8 @@ const uint_least8_t ADC_count = MSP_EXP432P401R_ADCCOUNT;
 /*
  *  =============================== ADCBuf ===============================
  */
-#include <ti/drivers/ADCBuf.h>
-#include <ti/drivers/adcbuf/ADCBufMSP432.h>
+#include <drivers/ADCBuf.h>
+#include <drivers/adcbuf/ADCBufMSP432.h>
 
 /* ADC objects */
 ADCBufMSP432_Object adcbufMSP432Objects[MSP_EXP432P401R_ADCBUFCOUNT];
@@ -176,8 +176,8 @@ const uint_least8_t ADCBuf_count = MSP_EXP432P401R_ADCBUFCOUNT;
 /*
  *  ============================= Capture =============================
  */
-#include <ti/drivers/Capture.h>
-#include <ti/drivers/capture/CaptureMSP432.h>
+#include <drivers/Capture.h>
+#include <drivers/capture/CaptureMSP432.h>
 
 CaptureMSP432_Object captureMSP432Objects[MSP_EXP432P401R_CAPTURECOUNT];
 
@@ -231,7 +231,7 @@ const uint_least8_t Capture_count = MSP_EXP432P401R_CAPTURECOUNT;
 /*
  *  =============================== DMA ===============================
  */
-#include <ti/drivers/dma/UDMAMSP432.h>
+#include <drivers/dma/UDMAMSP432.h>
 
 static DMA_ControlTable dmaControlTable[16] __attribute__ ((aligned (256)));
 
@@ -267,9 +267,9 @@ const UDMAMSP432_Config UDMAMSP432_config = {
 /*
  *  ============================= Display =============================
  */
-#include <ti/display/Display.h>
-#include <ti/display/DisplayUart.h>
-#include <ti/display/DisplaySharp.h>
+#include <display/Display.h>
+#include <display/DisplayUart.h>
+#include <display/DisplaySharp.h>
 #define MAXPRINTLEN 1024
 
 /* This value can be changed to 96 for use with the 430BOOST-SHARP96 BoosterPack. */
@@ -356,8 +356,8 @@ void Board_init(void)
 /*
  *  =============================== GPIO ===============================
  */
-#include <ti/drivers/GPIO.h>
-#include <ti/drivers/gpio/GPIOMSP432.h>
+#include <drivers/GPIO.h>
+#include <drivers/gpio/GPIOMSP432.h>
 
 /*
  * Array of Pin configurations
@@ -446,8 +446,8 @@ const GPIOMSP432_Config GPIOMSP432_config = {
 /*
  *  =============================== I2C ===============================
  */
-#include <ti/drivers/I2C.h>
-#include <ti/drivers/i2c/I2CMSP432.h>
+#include <drivers/I2C.h>
+#include <drivers/i2c/I2CMSP432.h>
 
 I2CMSP432_Object i2cMSP432Objects[MSP_EXP432P401R_I2CCOUNT];
 
@@ -488,8 +488,8 @@ const uint_least8_t I2C_count = MSP_EXP432P401R_I2CCOUNT;
 /*
  *  =============================== I2CSlave ===============================
  */
-#include <ti/drivers/I2CSlave.h>
-#include <ti/drivers/i2cslave/I2CSlaveMSP432.h>
+#include <drivers/I2CSlave.h>
+#include <drivers/i2cslave/I2CSlaveMSP432.h>
 
 I2CSlaveMSP432_Object i2cSlaveMSP432Objects[MSP_EXP432P401R_I2CSLAVECOUNT];
 
@@ -517,8 +517,8 @@ const uint_least8_t I2CSlave_count = MSP_EXP432P401R_I2CSLAVECOUNT;
 /*
  *  =============================== NVS ===============================
  */
-#include <ti/drivers/NVS.h>
-#include <ti/drivers/nvs/NVSMSP432.h>
+#include <drivers/NVS.h>
+#include <drivers/nvs/NVSMSP432.h>
 
 #define SECTORSIZE       0x1000
 #define NVS_REGIONS_BASE 0x30000
@@ -584,8 +584,8 @@ const uint_least8_t NVS_count = MSP_EXP432P401R_NVSCOUNT;
 /*
  *  =============================== Power ===============================
  */
-#include <ti/devices/msp432p4xx/driverlib/cs.h>
-#include <ti/devices/msp432p4xx/driverlib/pcm.h>
+#include <driverlib/cs.h>
+#include <driverlib/pcm.h>
 
 /* Custom performance level for SPI Master Example */
 PowerMSP432_PerfLevel myPerfLevels[] = {{
@@ -626,8 +626,8 @@ const PowerMSP432_ConfigV1 PowerMSP432_config = {
 /*
  *  =============================== PWM ===============================
  */
-#include <ti/drivers/PWM.h>
-#include <ti/drivers/pwm/PWMTimerMSP432.h>
+#include <drivers/PWM.h>
+#include <drivers/pwm/PWMTimerMSP432.h>
 
 PWMTimerMSP432_Object pwmTimerMSP432Objects[MSP_EXP432P401R_PWMCOUNT];
 
@@ -660,34 +660,34 @@ const uint_least8_t PWM_count = MSP_EXP432P401R_PWMCOUNT;
 /*
  *  =============================== SDFatFS ===============================
  */
-#include <ti/drivers/SD.h>
-#include <ti/drivers/SDFatFS.h>
+// #include <drivers/SD.h>
+// #include <drivers/SDFatFS.h>
 
-/*
- * Note: The SDFatFS driver provides interface functions to enable FatFs
- * but relies on the SD driver to communicate with SD cards.  Opening a
- * SDFatFs driver instance will internally try to open a SD driver instance
- * reusing the same index number (opening SDFatFs driver at index 0 will try to
- * open SD driver at index 0).  This requires that all SDFatFs driver instances
- * have an accompanying SD driver instance defined with the same index.  It is
- * acceptable to have more SD driver instances than SDFatFs driver instances
- * but the opposite is not supported & the SDFatFs will fail to open.
- */
-SDFatFS_Object sdfatfsObjects[MSP_EXP432P401R_SDFatFSCOUNT];
+// /*
+//  * Note: The SDFatFS driver provides interface functions to enable FatFs
+//  * but relies on the SD driver to communicate with SD cards.  Opening a
+//  * SDFatFs driver instance will internally try to open a SD driver instance
+//  * reusing the same index number (opening SDFatFs driver at index 0 will try to
+//  * open SD driver at index 0).  This requires that all SDFatFs driver instances
+//  * have an accompanying SD driver instance defined with the same index.  It is
+//  * acceptable to have more SD driver instances than SDFatFs driver instances
+//  * but the opposite is not supported & the SDFatFs will fail to open.
+//  */
+// SDFatFS_Object sdfatfsObjects[MSP_EXP432P401R_SDFatFSCOUNT];
 
-const SDFatFS_Config SDFatFS_config[MSP_EXP432P401R_SDFatFSCOUNT] = {
-    {
-        .object = &sdfatfsObjects[MSP_EXP432P401R_SDFatFS0]
-    }
-};
+// const SDFatFS_Config SDFatFS_config[MSP_EXP432P401R_SDFatFSCOUNT] = {
+//     {
+//         .object = &sdfatfsObjects[MSP_EXP432P401R_SDFatFS0]
+//     }
+// };
 
-const uint_least8_t SDFatFS_count = MSP_EXP432P401R_SDFatFSCOUNT;
+// const uint_least8_t SDFatFS_count = MSP_EXP432P401R_SDFatFSCOUNT;
 
 /*
  *  =============================== SD ===============================
  */
-#include <ti/drivers/SD.h>
-#include <ti/drivers/sd/SDSPI.h>
+#include <drivers/SD.h>
+#include <drivers/sd/SDSPI.h>
 
 SDSPI_Object sdspiObjects[MSP_EXP432P401R_SDCOUNT];
 
@@ -711,8 +711,8 @@ const uint_least8_t SD_count = MSP_EXP432P401R_SDCOUNT;
 /*
  *  =============================== SPI ===============================
  */
-#include <ti/drivers/SPI.h>
-#include <ti/drivers/spi/SPIMSP432DMA.h>
+#include <drivers/SPI.h>
+#include <drivers/spi/SPIMSP432DMA.h>
 
 SPIMSP432DMA_Object spiMSP432DMAObjects[MSP_EXP432P401R_SPICOUNT];
 
@@ -816,8 +816,8 @@ const uint_least8_t SPI_count = MSP_EXP432P401R_SPICOUNT;
 /*
  *  =============================== Timer ===============================
  */
-#include <ti/drivers/Timer.h>
-#include <ti/drivers/timer/TimerMSP432.h>
+#include <drivers/Timer.h>
+#include <drivers/timer/TimerMSP432.h>
 
 TimerMSP432_Object timerMSP432Objects[MSP_EXP432P401R_TIMERCOUNT];
 
@@ -891,8 +891,8 @@ const uint_least8_t Timer_count = MSP_EXP432P401R_TIMERCOUNT;
 /*
  *  =============================== UART ===============================
  */
-#include <ti/drivers/UART.h>
-#include <ti/drivers/uart/UARTMSP432.h>
+#include <drivers/UART.h>
+#include <drivers/uart/UARTMSP432.h>
 
 UARTMSP432_Object uartMSP432Objects[MSP_EXP432P401R_UARTCOUNT];
 unsigned char uartMSP432RingBuffer[MSP_EXP432P401R_UARTCOUNT][32];
@@ -975,8 +975,8 @@ const uint_least8_t UART_count = MSP_EXP432P401R_UARTCOUNT;
 /*
  *  =============================== Watchdog ===============================
  */
-#include <ti/drivers/Watchdog.h>
-#include <ti/drivers/watchdog/WatchdogMSP432.h>
+#include <drivers/Watchdog.h>
+#include <drivers/watchdog/WatchdogMSP432.h>
 
 WatchdogMSP432_Object watchdogMSP432Objects[MSP_EXP432P401R_WATCHDOGCOUNT];
 

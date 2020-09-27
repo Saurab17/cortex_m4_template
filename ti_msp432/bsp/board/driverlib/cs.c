@@ -33,14 +33,14 @@
 #include <stdint.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/cs.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/cs.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
 
 #ifdef __MCU_HAS_SYSCTL_A__
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
+#include <driverlib/sysctl_a.h>
 #else
-#include <ti/devices/msp432p4xx/driverlib/sysctl.h>
+#include <driverlib/sysctl.h>
 #endif
 
 /* Statics */

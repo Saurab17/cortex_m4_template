@@ -57,7 +57,7 @@
  *  @anchor ti_drivers_Timer_Synopsis_Code
  *  @code
  *  // Import Timer Driver definitions
- *  #include <ti/drivers/Timer.h>
+ *  #include <drivers/Timer.h>
  *
  *  Timer_Handle    handle;
  *  Timer_Params    params;
@@ -75,7 +75,7 @@
  *
  *  @code
  *  // Import Timer Driver definitions
- *  #include <ti/drivers/Timer.h>
+ *  #include <drivers/Timer.h>
  *
  *  Timer_Handle    handle;
  *  Timer_Params    params;

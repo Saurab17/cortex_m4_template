@@ -33,7 +33,7 @@
 #define __FLASH_H__
 
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 
 /* Define to ensure that our current MSP432 has the FLCTL module. This
     definition is included in the device specific header file */

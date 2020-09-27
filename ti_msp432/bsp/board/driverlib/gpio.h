@@ -50,7 +50,7 @@ extern "C"
 {
 #endif
 
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 #include <stdint.h>
 
 #define GPIO_PORT_P1                                                          1

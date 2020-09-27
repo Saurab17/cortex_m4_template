@@ -30,7 +30,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <ti/grlib/grlib.h>
+#include <grlib/grlib.h>
 
 //*****************************************************************************
 //

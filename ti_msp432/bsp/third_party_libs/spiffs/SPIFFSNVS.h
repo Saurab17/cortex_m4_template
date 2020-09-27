@@ -36,7 +36,7 @@
  *
  *  The SPIFFSNVS header file should be included in an application as follows:
  *  @code
- *  #include <third_party/spiffs/SPIFFSNVS.h>
+ *  #include <spiffs/SPIFFSNVS.h>
  *  @endcode
  *
  *  SPIFFSNVS is designed to provide interface functions required by the SPIFFS
@@ -168,8 +168,8 @@
 #include "spiffs_config.h"
 #include "spiffs.h"
 
-#include <ti/drivers/NVS.h>
-#include <ti/drivers/dpl/MutexP.h>
+#include <drivers/NVS.h>
+#include <drivers/dpl/MutexP.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -47,19 +47,19 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/GPIO.h>
-#include <ti/drivers/gpio/GPIOMSP432.h>
-#include <ti/drivers/dpl/DebugP.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/GPIO.h>
+#include <drivers/gpio/GPIOMSP432.h>
+#include <drivers/dpl/DebugP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
 /* driverlib header files */
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/gpio.h>
+#include <driverlib/interrupt.h>
 
 /*
  * There are 11 8-bit ports total (1-10 and J)

@@ -40,13 +40,13 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
-#include <ti/drivers/NVS.h>
-#include <ti/drivers/nvs/NVSMSP432.h>
+#include <drivers/NVS.h>
+#include <drivers/nvs/NVSMSP432.h>
 
 #include DeviceFamily_constructPath(driverlib/rom.h)
 #include DeviceFamily_constructPath(driverlib/rom_map.h)

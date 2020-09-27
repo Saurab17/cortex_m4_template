@@ -36,8 +36,8 @@
  *
  *  The GPIO header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/GPIO.h>
- *  #include <ti/drivers/gpio/GPIOMSP432.h>
+ *  #include <drivers/GPIO.h>
+ *  #include <drivers/gpio/GPIOMSP432.h>
  *  @endcode
  *
  *  Refer to @ref GPIO.h for a complete description of the GPIO
@@ -154,7 +154,7 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-#include <ti/drivers/GPIO.h>
+#include <drivers/GPIO.h>
 
 /*!
  *  @brief  GPIO device specific driver configuration structure

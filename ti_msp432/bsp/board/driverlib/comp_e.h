@@ -52,7 +52,7 @@ extern "C"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 
 /* Module defines for Comp */
 #define COMP_E_CMSIS(x) ((COMP_E_Type *) x)

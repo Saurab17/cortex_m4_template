@@ -33,12 +33,12 @@
 #include <stdint.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/flash_a.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/cpu.h>
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
+#include <driverlib/flash_a.h>
+#include <driverlib/debug.h>
+#include <driverlib/interrupt.h>
+#include <msp.h>
+#include <driverlib/cpu.h>
+#include <driverlib/sysctl_a.h>
 
 /* Define to ensure that our current MSP432 has the FLCTL_A module. This
     definition is included in the device specific header file */

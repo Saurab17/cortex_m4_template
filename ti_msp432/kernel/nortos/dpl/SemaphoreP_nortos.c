@@ -36,10 +36,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/dpl/ClockP.h>
-#include <ti/drivers/Power.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/ClockP.h>
+#include <drivers/Power.h>
 
 #define MAXCOUNT 0xffff
 

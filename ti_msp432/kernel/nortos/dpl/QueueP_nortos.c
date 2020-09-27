@@ -33,7 +33,7 @@
  *  ======== QueueP_nortos.c ========
  */
 
-#include <ti/drivers/dpl/HwiP.h>
+#include <drivers/dpl/HwiP.h>
 #include "QueueP.h"
 
 /*

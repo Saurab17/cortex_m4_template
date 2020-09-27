@@ -29,9 +29,9 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/comp_e.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/comp_e.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/debug.h>
 
 static uint16_t __getRegisterSettingForInput(uint32_t input)
 {

@@ -33,12 +33,12 @@
 #ifndef ti_display_DisplaySharp__include
 #define ti_display_DisplaySharp__include
 
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
-#include <ti/drivers/SPI.h>
+#include <drivers/SPI.h>
 
-#include <ti/display/Display.h>
-#include <ti/grlib/grlib.h>
+#include <display/Display.h>
+#include <grlib/grlib.h>
 
 #include <stdint.h>
 
@@ -47,7 +47,7 @@
  *  DISPLAYSHARP_CMD_* macros are command codes only defined in the
  *  DisplaySharp.h driver implementation and need to:
  *  @code
- *  #include <ti/display/DisplaySharp.h>
+ *  #include <display/DisplaySharp.h>
  *  @endcode
  *  @{
  */

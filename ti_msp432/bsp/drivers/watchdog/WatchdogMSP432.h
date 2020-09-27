@@ -37,8 +37,8 @@
  *  The Watchdog header file for MSP432 should be included in an application
  *  as follows:
  *  @code
- *  #include <ti/drivers/Watchdog.h>
- *  #include <ti/drivers/watchdog/WatchdogMSP432.h>
+ *  #include <drivers/Watchdog.h>
+ *  #include <drivers/watchdog/WatchdogMSP432.h>
  *  @endcode
  *
  *  Refer to @ref Watchdog.h for a complete description of APIs & example of
@@ -77,16 +77,16 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/drivers/Watchdog.h>
+#include <drivers/Watchdog.h>
 
-#include <ti/drivers/dpl/HwiP.h>
+#include <drivers/dpl/HwiP.h>
 
 /**
  *  @addtogroup Watchdog_STATUS
  *  WatchdogMSP432_STATUS_* macros are command codes only defined in the
  *  WatchdogMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/watchdog/WatchdogMSP432.h>
+ *  #include <drivers/watchdog/WatchdogMSP432.h>
  *  @endcode
  *  @{
  */
@@ -100,7 +100,7 @@ extern "C" {
  *  WatchdogMSP432_CMD_* macros are command codes only defined in the
  *  WatchdogMSP432.h driver implementation and need to:
  *  @code
- *  #include <ti/drivers/watchdog/WatchdogMSP432.h>
+ *  #include <drivers/watchdog/WatchdogMSP432.h>
  *  @endcode
  *  @{
  */

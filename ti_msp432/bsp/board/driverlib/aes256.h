@@ -52,7 +52,7 @@ extern "C"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 
 /* Module Defines and macro for easy access */
 #define AES256_CMSIS(x) ((AES256_Type *) x)

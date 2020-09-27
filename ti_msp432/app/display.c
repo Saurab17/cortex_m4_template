@@ -37,13 +37,13 @@
 #include <unistd.h>
 
 /* TI-Drivers Header files */
-#include <ti/drivers/GPIO.h>
+#include <drivers/GPIO.h>
 
 /* Display Header files */
-#include <ti/display/Display.h>
-#include <ti/display/DisplayUart.h>
-#include <ti/display/DisplayExt.h>
-#include <ti/display/AnsiColor.h>
+#include <display/Display.h>
+#include <display/DisplayUart.h>
+#include <display/DisplayExt.h>
+#include <display/AnsiColor.h>
 
 /* Board Header files */
 #include "Board.h"

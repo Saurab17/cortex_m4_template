@@ -33,22 +33,22 @@
  *  ======== Random.c ========
  */
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/utils/Random.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/utils/Random.h>
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
 #if (DeviceFamily_PARENT == DeviceFamily_PARENT_CC13X2_CC26X2 || \
      DeviceFamily_PARENT == DeviceFamily_PARENT_CC13X0_CC26X0)
 
-    #include <ti/drivers/TRNG.h>
-    #include <ti/drivers/trng/TRNGCC26XX.h>
-    #include <ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h>
+    #include <drivers/TRNG.h>
+    #include <drivers/trng/TRNGCC26XX.h>
+    #include <drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h>
 
 #elif (DeviceFamily_ID == DeviceFamily_ID_MSP432E401Y || \
        DeviceFamily_ID == DeviceFamily_ID_MSP432E411Y)

@@ -47,29 +47,29 @@
 #define DebugP_LOG_ENABLED 0
 #endif
 
-#include <ti/devices/DeviceFamily.h>
+#include <DeviceFamily.h>
 
-#include <ti/drivers/dpl/DebugP.h>
-#include <ti/drivers/dpl/HwiP.h>
+#include <drivers/dpl/DebugP.h>
+#include <drivers/dpl/HwiP.h>
 
-#include <ti/drivers/utils/List.h>
+#include <drivers/utils/List.h>
 
-#include <ti/drivers/Power.h>
-#include <ti/drivers/power/PowerMSP432.h>
+#include <drivers/Power.h>
+#include <drivers/power/PowerMSP432.h>
 
 /* driverlib header files */
-#include <ti/devices/msp432p4xx/driverlib/rom.h>
-#include <ti/devices/msp432p4xx/driverlib/rom_map.h>
-#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
-#include <ti/devices/msp432p4xx/driverlib/rtc_c.h>
-#include <ti/devices/msp432p4xx/driverlib/pcm.h>
-#include <ti/devices/msp432p4xx/driverlib/cs.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <driverlib/rom.h>
+#include <driverlib/rom_map.h>
+#include <driverlib/wdt_a.h>
+#include <driverlib/rtc_c.h>
+#include <driverlib/pcm.h>
+#include <driverlib/cs.h>
+#include <driverlib/interrupt.h>
 
 #if DeviceFamily_ID == DeviceFamily_ID_MSP432P401x
 /* MSP432P401xx devices */
-#include <ti/devices/msp432p4xx/driverlib/flash.h>
-#include <ti/devices/msp432p4xx/driverlib/sysctl.h>
+#include <driverlib/flash.h>
+#include <driverlib/sysctl.h>
 #define SET_WAIT_STATES MAP_FlashCtl_setWaitState
 #define ENABLE_READ_BUFFERING MAP_FlashCtl_enableReadBuffering
 #define DISABLE_READ_BUFFERING MAP_FlashCtl_disableReadBuffering
@@ -83,8 +83,8 @@
 #define CSSRC 0x1
 #else
 /* MSP432P4x1xl devices */
-#include <ti/devices/msp432p4xx/driverlib/flash_a.h>
-#include <ti/devices/msp432p4xx/driverlib/sysctl_a.h>
+#include <driverlib/flash_a.h>
+#include <driverlib/sysctl_a.h>
 #define SET_WAIT_STATES MAP_FlashCtl_A_setWaitState
 #define ENABLE_READ_BUFFERING MAP_FlashCtl_A_enableReadBuffering
 #define DISABLE_READ_BUFFERING MAP_FlashCtl_A_disableReadBuffering

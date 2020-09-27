@@ -40,7 +40,7 @@
 #ifndef __SHARPLCD_H__
 #define __SHARPLCD_H__
 
-#include <ti/drivers/SPI.h>
+#include <drivers/SPI.h>
 
 //*****************************************************************************
 //

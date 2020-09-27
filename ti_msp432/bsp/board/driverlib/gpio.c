@@ -33,9 +33,9 @@
 #include <stdint.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/gpio.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
+#include <driverlib/gpio.h>
+#include <driverlib/debug.h>
+#include <driverlib/interrupt.h>
 
 
 static const uint32_t GPIO_PORT_TO_INT[] =

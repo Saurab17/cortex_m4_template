@@ -52,8 +52,8 @@
  *  Below is an example TimerMSP432_Object array appropriate for the MSP432
  *  LaunchPad board:
  *  @code
- *    #include <ti/drivers/Timer.h>
- *    #include <ti/drivers/timer/TimerMSP432.h>
+ *    #include <drivers/Timer.h>
+ *    #include <drivers/timer/TimerMSP432.h>
  *
  *    TimerMSP432_Object timerMSP432Objects[3];
  *  @endcode
@@ -163,10 +163,10 @@ extern "C"
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <ti/drivers/Power.h>
-#include <ti/drivers/Timer.h>
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
+#include <drivers/Power.h>
+#include <drivers/Timer.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
 
 extern const Timer_FxnTable TimerMSP432_Timer_A_fxnTable;
 extern const Timer_FxnTable TimerMSP432_Timer32_fxnTable;

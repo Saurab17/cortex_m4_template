@@ -53,8 +53,8 @@ extern "C"
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/eusci.h>
+#include <msp.h>
+#include <driverlib/eusci.h>
 
 #define DEFAULT_SYNC                                    0x00
 #define EUSCI_A_UART_AUTOMATICBAUDRATE_SYNC             0x55

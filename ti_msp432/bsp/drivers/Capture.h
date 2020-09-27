@@ -64,7 +64,7 @@
  *  @anchor ti_drivers_Capture_Synopsis_Code
  *  @code
  *  // Import Capture Driver definitions
- *  #include <ti/drivers/Capture.h>
+ *  #include <drivers/Capture.h>
  *
  *  Capture_Handle    handle;
  *  Capture_Params    params;

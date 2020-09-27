@@ -53,7 +53,7 @@ extern "C"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 
 /******************************************************************************
 * NVIC interrupts                                                             *

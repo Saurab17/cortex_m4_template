@@ -40,8 +40,8 @@
  *
  *  The NVS header file should be included in an application as follows:
  *  @code
- *  #include <ti/drivers/NVS.h>
- *  #include <ti/drivers/nvs/NVSRAM.h>
+ *  #include <drivers/NVS.h>
+ *  #include <drivers/nvs/NVSRAM.h>
  *  @endcode
  *
  *  ============================================================================

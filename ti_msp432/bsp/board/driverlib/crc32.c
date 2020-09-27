@@ -29,9 +29,9 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/crc32.h>
-#include <ti/devices/msp432p4xx/inc/msp.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/crc32.h>
+#include <msp.h>
+#include <driverlib/debug.h>
 
 
 void CRC32_setSeed(uint32_t seed, uint_fast8_t crcType)

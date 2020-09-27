@@ -11,7 +11,7 @@ allow for integration with SimpleLink SDK.  Unmodified source can be found at
 "Elm-Chan FatFs Homepage").  Changes are as follows:
 
 * The _source_ directory has been removed.  All _FatFs_ source files have been
-moved up a directory (to _third_party/fatfs_) alongside _documents_ & _lib_
+moved up a directory (to _fatfs_) alongside _documents_ & _lib_
 directories.
 
 * _ff.c_:

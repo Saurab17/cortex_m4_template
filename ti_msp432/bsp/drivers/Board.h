@@ -84,7 +84,7 @@
  *  I2C bus instance.  These symbols enable applications to portably acquire
  *  an I2C bus handle and control an I2C slave on that bus.
  *  @code
- *  #include <ti/drivers/I2C.h>
+ *  #include <drivers/I2C.h>
  *  #include "Board.h"
  *
  *  // portably open an I2C bus instance

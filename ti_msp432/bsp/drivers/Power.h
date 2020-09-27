@@ -66,7 +66,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  // One-time initialization of Power manager
  *  Power_init();
@@ -120,7 +120,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  // One-time initialization of Power manager
  *  Power_init();
@@ -135,7 +135,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  bool flag;
  *
@@ -155,7 +155,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  uint32_t mask;
  *  int16_t status;
@@ -185,7 +185,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  int16_t count;
  *  int16_t status;
@@ -227,7 +227,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  // Application Power_NotifyObj object
  *  Power_NotifyObj powerNotifyObj;
@@ -300,7 +300,7 @@
  *
  *  @code
  *  // Import Power Driver definitions
- *  #include <ti/drivers/Power.h>
+ *  #include <drivers/Power.h>
  *
  *  uint32_t totalLatency, resumeLatency;
  *  int16_t status;
@@ -355,7 +355,7 @@
 #include <stdint.h>
 /* @endcond */
 
-#include <ti/drivers/utils/List.h>
+#include <drivers/utils/List.h>
 
 #ifdef __cplusplus
 extern "C" {

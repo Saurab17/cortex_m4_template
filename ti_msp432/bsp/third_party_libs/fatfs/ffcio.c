@@ -34,7 +34,7 @@
  *
  */
 
-#include <file.h>
+#include <sys/file.h>
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -33,12 +33,12 @@
 #include <stdint.h>
 
 /* DriverLib Includes */
-#include <ti/devices/msp432p4xx/driverlib/pcm.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
-#include <ti/devices/msp432p4xx/driverlib/interrupt.h>
-#include <ti/devices/msp432p4xx/driverlib/wdt_a.h>
-#include <ti/devices/msp432p4xx/driverlib/rtc_c.h>
-#include <ti/devices/msp432p4xx/driverlib/cpu.h>
+#include <driverlib/pcm.h>
+#include <driverlib/debug.h>
+#include <driverlib/interrupt.h>
+#include <driverlib/wdt_a.h>
+#include <driverlib/rtc_c.h>
+#include <driverlib/cpu.h>
 
 static bool __PCM_setCoreVoltageLevelAdvanced(uint_fast8_t voltageLevel,
         uint32_t timeOut, bool blocking)

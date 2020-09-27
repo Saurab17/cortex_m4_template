@@ -29,8 +29,8 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-#include <ti/devices/msp432p4xx/driverlib/ref_a.h>
-#include <ti/devices/msp432p4xx/driverlib/debug.h>
+#include <driverlib/ref_a.h>
+#include <driverlib/debug.h>
 
 void REF_A_setReferenceVoltage(uint_fast8_t referenceVoltageSelect)
 {

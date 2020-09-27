@@ -40,15 +40,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/dpl/ClockP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SemaphoreP.h>
+#include <drivers/dpl/ClockP.h>
 
-#include <ti/drivers/NVS.h>
-#include <ti/drivers/nvs/NVSSPI25X.h>
+#include <drivers/NVS.h>
+#include <drivers/nvs/NVSSPI25X.h>
 
-#include <ti/drivers/SPI.h>
-#include <ti/drivers/GPIO.h>
+#include <drivers/SPI.h>
+#include <drivers/GPIO.h>
 
 /* Instruction codes */
 #define SPIFLASH_WRITE              0x02 /**< Page Program */

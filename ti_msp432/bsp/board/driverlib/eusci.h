@@ -32,7 +32,7 @@
 #ifndef EUSCI_H_
 #define EUSCI_H_
 
-#include <ti/devices/msp432p4xx/inc/msp.h>
+#include <msp.h>
 
 #define EUSCI_A_CMSIS(x) ((EUSCI_A_Type *) x)
 #define EUSCI_B_CMSIS(x) ((EUSCI_B_Type *) x)

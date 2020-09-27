@@ -38,8 +38,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <ti/drivers/dpl/HwiP.h>
-#include <ti/drivers/dpl/SwiP.h>
+#include <drivers/dpl/HwiP.h>
+#include <drivers/dpl/SwiP.h>
 
 #include "QueueP.h"
 
