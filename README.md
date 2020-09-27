@@ -1,25 +1,37 @@
 # Arm Cortex-M4 Template
 A cross development [CMake](https://cmake.org/) project template for arm cortex-m4 based microcontrollers on `Linux` host.  
 The main purpose of this template is to help embedded developers leverage CMake build features. Also,   
-with this template, you are free to use your own favorite C/C++ code editor like `VS Code`, `Atom` etc.
+with this template, you are free to use your own favorite C/C++ code editor like `VS Code`, `Atom` etc.  
 
-![msp432p401r pinout](MSP432-Pinout.png)
+![msp432p401r pinout](cortex-m4.png)
 
 ## Project Setup
-The top-level project directory structure is as follows:  
+An example setup has been provided for Texas Instruments [MSP-EXP432P401R](https://www.ti.com/store/ti/en/p/product/?p=MSP-EXP432P401R) board. The top-level project directory structure is as follows: 
 
-+ board_essentials
-    - This directory contains the [system configuration](https://www.keil.com/pack/doc/CMSIS/Core/html/system_c_pg.html) and [startup](https://www.keil.com/pack/doc/CMSIS/Core/html/startup_c_pg.html) files.  
-    It also includes the [CMSIS](https://www.keil.com/pack/doc/CMSIS/Core/html/index.html) header files. 
-    - For example, below are the links to support files for popular boards:
-        -  [TI MSP432P401R](http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP432GCC/latest/index_FDS.html)
-        -  [STLink STM32F4xx Discovery](https://github.com/charleskorn/stm32f4-project-template/tree/master/lib/stm32f4xx)
-        -   [Nordic nRF52840](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-MDK/Download#infotabs)
++ app
+    - Contains user level code and board configuration files.
 
 + bsp
-    - This directory to store the board support software from vendor. 
-    - Subdirectories:
-        -  [driverlib](https://www.ti.com/tool/MSPDRIVERLIB): Software APIs that abstract away the details of the device’s hardware registers.
+    - This directory holds the support software provided by vendors in form of [SDK](https://www.ti.com/tool/download/SIMPLELINK-MSP432-SDK/3.20.00.06).
+    - Following are common `SDK` submodules contained in this directory:
+        + `board_essentials`
+            - This directory contains the [system configuration](https://www.keil.com/pack/doc/CMSIS/Core/html/system_c_pg.html) and [startup](https://www.keil.com/pack/doc/CMSIS/Core/html/startup_c_pg.html) files.  
+            It also includes the [CMSIS](https://www.keil.com/pack/doc/CMSIS/Core/html/index.html) header files. 
+            - For example, below are the links to support files for popular boards:
+                +  [TI MSP432P401R](http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP432GCC/latest/index_FDS.html)
+                +  [STLink STM32F4xx Discovery](https://github.com/charleskorn/stm32f4-project-template/tree/master/lib/stm32f4xx)
+                +   [Nordic nRF52840](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-MDK/Download#infotabs)
+        
+        +  [driverlib](https://www.ti.com/tool/MSPDRIVERLIB): 
+            - Software APIs that abstract away the details of the device’s hardware registers.
+
+        +  `drivers`: 
+            - Peripheral drivers for ADC, Timers, UART etc. These are portable drivers that  
+            can be used across several similar boards from the same vendor.
+
++ kernel
+    - Directory containing the kernel source and binary files such as those of [FreeRTOS](https://www.freertos.org/), [QNX](https://blackberry.qnx.com/en), [NuttX](https://nuttx.apache.org/) etc;
+
 
 + cross_compiler
     - This directory contains the [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm) to cross-compile your source code  
@@ -29,8 +41,7 @@ The top-level project directory structure is as follows:
     - Project top level cmake config file.
 
 + main_*.c
-    - The file containing program entry `main()` function. Alternatively, the entire app code along  
-    with main_*.c file can be moved in an `app` folder and cmake config files tweaked accordingly.
+    - The file containing program entry `main()` function.
 
 + *.ld(s)
     - The linker script for the particular board provided by the vendor.
