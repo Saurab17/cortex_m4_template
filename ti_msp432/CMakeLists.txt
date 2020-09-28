@@ -28,9 +28,7 @@ set(CMAKE_C_COMPILER ${GCC_PATH}/bin/arm-none-eabi-gcc CACHE PATH "" FORCE)
 # Board specific info
 set(DEVICE MSP432P401R)
 set(LDSCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/MSP_EXP432P401R_NoRTOS.lds)
-set(DEVICE_FLAGS    "-D__${DEVICE}__ -DDeviceFamily_MSP432P401x -Dgcc -DMISSING_SYSCALL_NAMES\
- -DBOARD_DISPLAY_USE_UART_ANSI=1\
- -DBOARD_DISPLAY_USE_LCD=0")
+set(DEVICE_FLAGS    "-D__${DEVICE}__ -DDeviceFamily_MSP432P401x -Dgcc")
 
 # FLAGS Common to all Cortex-M Boards
 set(ARM_FLAGS       "-mcpu=cortex-m4 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16")
