@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name and version
-project(cortex_m4_template VERSION 1.0)
+project(cortex_m4_template VERSION 3.0)
 
 # add the bin directory to the build system
 set(BIN_DIRECTORY   ${CMAKE_BINARY_DIR}/bin)
