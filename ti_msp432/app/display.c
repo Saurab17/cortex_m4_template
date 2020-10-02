@@ -51,18 +51,26 @@
 /* Example GrLib image */
 #include "splash_image.h"
 
+#include <FreeRTOS.h>
+#include "task.h"
+
 /*
  *  ======== mainThread ========
  */
-void *mainThread(void *arg0)
+void toggle_led(void *arg0)
 {
     unsigned int ledPinValue;
     unsigned int loopCount = 0;
 
+    uint_least8_t led = Board_GPIO_LED1;
+    if(arg0 == NULL) {
+        led = Board_GPIO_LED0;
+    }
+
     GPIO_init();
     Display_init();
 
-    GPIO_write(Board_GPIO_LED0, Board_GPIO_LED_ON);
+    GPIO_write(led, Board_GPIO_LED_ON);
 
     /* Initialize display and try to open both UART and LCD types of display. */
     Display_Params params;
@@ -92,7 +100,7 @@ void *mainThread(void *arg0)
          */
         Display_printf(hLcd, 4, 0, "Serial display");
         Display_printf(hLcd, 5, 0, "not present");
-        sleep(1);
+        vTaskDelay(1000);
     }
 
     /* Check if the selected Display type was found and successfully opened */
@@ -100,7 +108,7 @@ void *mainThread(void *arg0)
         Display_printf(hLcd, 5, 3, "Hello LCD!");
 
         /* Wait a while so text can be viewed. */
-        sleep(3);
+        vTaskDelay(3000);
 
         /*
          * Use the GrLib extension to get the GraphicsLib context object of the
@@ -126,13 +134,13 @@ void *mainThread(void *arg0)
         }
 
         /* Wait for a bit, then clear */
-        sleep(3);
+        vTaskDelay(3000);
         Display_clear(hLcd);
     }
     else
     {
         Display_printf(hSerial, 1, 0, "LCD display not present");
-        sleep(1);
+        vTaskDelay(1000);
     }
 
     char *serialLedOn = "On";
@@ -156,7 +164,7 @@ void *mainThread(void *arg0)
 
     /* Loop forever, alternating LED state and Display output. */
     while (1) {
-        ledPinValue = GPIO_read(Board_GPIO_LED0);
+        ledPinValue = GPIO_read(led);
 
         /* Print to LCD and clear alternate lines if the LED is on or not. */
         Display_clearLine(hLcd, ledPinValue ? 1 : 0);
@@ -175,9 +183,9 @@ void *mainThread(void *arg0)
             Display_printf(hSerial, DisplayUart_SCROLLING, 0, "[ %d ] LED: %s", loopCount++, currLedState);
         }
 
-        sleep(1);
+        vTaskDelay(1000);
 
         /* Toggle LED */
-        GPIO_toggle(Board_GPIO_LED0);
+        GPIO_toggle(led);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019, Texas Instruments Incorporated
+ * Copyright (c) 2015-2016, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,75 +29,58 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 /*
- *  ======== main_freertos.c ========
+ *  ======== DebugP_freertos.c ========
  */
+
 #include <stdint.h>
-
-/* RTOS header files */
-#include <FreeRTOS.h>
-#include <task.h>
-
-/* Example/Board Header files */
-#include <drivers/Board.h>
-
-extern void toggle_led(void *arg0);
-
-/* Stack size in bytes */
-#define THREADSTACKSIZE   1024
+#include <stdbool.h>
+#include <stdlib.h>
 
 /*
- *  ======== main ========
+ *  ======== _DebugP_assert ========
  */
-int main(void)
+void _DebugP_assert(int expression, const char *file, int line)
 {
-
-    /* Call driver init functions */
-    Board_init();
-
-    static const char * led = "1";
-    // xTaskCreate(toggle_led, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-    xTaskCreate(toggle_led, "abc", configMINIMAL_STACK_SIZE, (void *) led, 2, NULL);
-
-    /* Start the FreeRTOS scheduler */
-    vTaskStartScheduler();
-
-    for(;;);
-
-    return (0);
+#if configASSERT_DEFINED
+    configASSERT(expression);
+#endif
 }
 
-//*****************************************************************************
-//
-//! \brief Application defined malloc failed hook
-//!
-//! \param  none
-//!
-//! \return none
-//!
-//*****************************************************************************
-void vApplicationMallocFailedHook()
+/*
+ *  ======== DebugP_log0 ========
+ */
+void DebugP_log0(const char *format)
 {
-    /* Handle Memory Allocation Errors */
-    while(1)
-    {
-    }
+//    printf(format);
 }
 
-//*****************************************************************************
-//
-//! \brief Application defined stack overflow hook
-//!
-//! \param  none
-//!
-//! \return none
-//!
-//*****************************************************************************
-void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
+/*
+ *  ======== DebugP_log1 ========
+ */
+void DebugP_log1(const char *format, uintptr_t p1)
 {
-    //Handle FreeRTOS Stack Overflow
-    while(1)
-    {
-    }
+//    printf(format, p1);
+}
+
+/*
+ *  ======== DebugP_log2 ========
+ */
+void DebugP_log2(const char *format, uintptr_t p1, uintptr_t p2)
+{
+//    printf(format, p1, p2);
+}
+/*
+ *  ======== DebugP_log3 ========
+ */
+void DebugP_log3(const char *format, uintptr_t p1, uintptr_t p2, uintptr_t p3)
+{
+//    printf(format, p1, p2, p3);
+}
+/*
+ *  ======== DebugP_log4 ========
+ */
+void DebugP_log4(const char *format, uintptr_t p1, uintptr_t p2, uintptr_t p3, uintptr_t p4)
+{
+//    printf(format, p1, p2, p3, p4);
 }

@@ -23,7 +23,7 @@ Writes to the UART and the available LCD display using the Display driver.
 (such as CCS or IAR), please refer to Board.html in
 your project directory for resources used and board-specific jumper settings.
 Otherwise, you can find Board.html in the directory
-&lt;SDK_INSTALL_DIR&gt;/source/ti/boards/&lt;BOARD&gt;.
+&lt;SDK_INSTALL_DIR&gt;/source/boards/&lt;BOARD&gt;.
 
 ## Example Usage
 
@@ -60,7 +60,7 @@ on UART
  the 430BOOST-SHARP96 from the "Use Hardware" option of the Display module or
  alternatively, make the following change in the _display.syscfg_ manually:
 ```
-var SharpLCD = scripting.addHardware("/ti/boards/boosterpacks/MSP430BOOST-SHARP96");
+var SharpLCD = scripting.addHardware("/boards/boosterpacks/MSP430BOOST-SHARP96");
 ```
 
 TI-RTOS:

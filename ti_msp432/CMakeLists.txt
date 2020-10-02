@@ -11,7 +11,7 @@ file(MAKE_DIRECTORY ${BIN_DIRECTORY})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIRECTORY})
 
 # Set the source files
-set(SOURCES main_nortos.c)
+set(SOURCES main_freertos.c FreeRTOSConfig.h)
 
 #########################.....Compiler Configuration for CMake........###########
 set(CMAKE_SYSTEM_NAME Generic)
@@ -27,14 +27,14 @@ set(CMAKE_C_COMPILER ${GCC_PATH}/bin/arm-none-eabi-gcc CACHE PATH "" FORCE)
 
 # Board specific info
 set(DEVICE MSP432P401R)
-set(LDSCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/MSP_EXP432P401R_NoRTOS.lds)
+set(LDSCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/MSP_EXP432P401R_FREERTOS.lds)
 set(DEVICE_FLAGS    "-D__${DEVICE}__ -DDeviceFamily_MSP432P401x -Dgcc")
 
 # FLAGS Common to all Cortex-M Boards
-set(ARM_FLAGS       "-mcpu=cortex-m4 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16")
-set(COMPILER_FLAGS  "-Wall -ffunction-sections -fdata-sections -MD -std=c99")
+set(ARM_FLAGS       "-mcpu=cortex-m4 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs")
+set(COMPILER_FLAGS  "-Wall -ffunction-sections -fdata-sections -MD -std=c99 -fno-builtin-malloc")
 set(DEBUG_FLAGS     "-g -gstrict-dwarf")
-set(LINKER_FLAGS    "-T${LDSCRIPT} -nostartfiles -eresetISR -l'gcc' -l'c' -l'nosys' -lm  --specs=nosys.specs")
+set(LINKER_FLAGS    "-T${LDSCRIPT} -nostartfiles -eresetISR -Wl,--gc-sections -l'gcc' -l'c' -l'nosys' -lm  --specs=nosys.specs")
 
 set(CMAKE_C_FLAGS " ${CMAKE_C_FLAGS} ${ARM_FLAGS} ${DEVICE_FLAGS} ${COMPILER_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LINKER_FLAGS}")
@@ -45,10 +45,12 @@ set(CMAKE_C_FLAGS_DEBUG "-Og ${DEBUG_FLAGS}")
 
 include_directories(${GCC_PATH}/arm-none-eabi/include
                     ${GCC_PATH}/arm-none-eabi/include/newlib-nano
+                    ${CMAKE_CURRENT_SOURCE_DIR}/
                     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/board
                     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/third_party_libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/bsp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/kernel
+                    ${CMAKE_CURRENT_SOURCE_DIR}/kernel/freertos/FreeRTOS10.3.1/Source/portable/GCC/ARM_CM4F
+                    ${CMAKE_CURRENT_SOURCE_DIR}/kernel/freertos/FreeRTOS10.3.1/Source/include
                     ${CMAKE_CURRENT_SOURCE_DIR}/app)
 
 link_directories(${GCC_PATH}/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
@@ -62,7 +64,7 @@ add_subdirectory(app)
 # add the executable
 set(EXECUTABLE ${PROJECT_NAME}.out)
 add_executable(${EXECUTABLE}  ${SOURCES})
-target_link_libraries(${EXECUTABLE} drivers driverlib app)
+target_link_libraries(${EXECUTABLE} drivers driverlib freertos app)
 
 # Generate and display code sizes
 add_custom_command(TARGET ${EXECUTABLE} POST_BUILD

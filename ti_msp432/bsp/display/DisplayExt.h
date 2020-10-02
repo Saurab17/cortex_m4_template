@@ -38,7 +38,7 @@
  * # Driver include #
  *  The display header file should be included in an application as follows:
  *  @code
- *  #include <ti/DisplayExt.h>
+ *  #include <DisplayExt.h>
  *  @endcode
  *
  *  # Operation #

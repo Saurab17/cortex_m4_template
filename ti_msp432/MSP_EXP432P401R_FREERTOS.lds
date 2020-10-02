@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Texas Instruments Incorporated
+ * Copyright (c) 2015-2017, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,12 +30,11 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 /*
- *  ======== MSP_EXP432P401R_NoRTOS.lds ========
+ *  ======== MSP_EXP432P401R_FREERTOS.lds ========
  *  Define the memory block start/length for the MSP_EXP432P401R M4
  */
 
 STACKSIZE = 0x1000;
-HEAP_SIZE = 0x8000;
 
 MEMORY
 {
@@ -129,7 +128,6 @@ SECTIONS {
         end = __heap_start__;
         _end = end;
         __end = end;
-        . = . + HEAP_SIZE;
         KEEP (*(.heap))
         __heap_end__ = .;
         __HeapLimit = __heap_end__;

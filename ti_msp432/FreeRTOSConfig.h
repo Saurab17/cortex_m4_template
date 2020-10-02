@@ -67,7 +67,7 @@ extern uint32_t CS_getMCLK(void);
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
 #define configTICK_RATE_HZ              ( ( TickType_t ) 1000 )
 #define configUSE_PREEMPTION            1
-#define configUSE_TIME_SLICING          0
+#define configUSE_TIME_SLICING          1
 #define configMAX_PRIORITIES            ( 10UL )
 #define configIDLE_SHOULD_YIELD         0
 #define configUSE_16_BIT_TICKS          0 /* Only for 8 and 16-bit hardware. */
@@ -123,11 +123,11 @@ supported, or if both static and dynamic allocation are supported. */
 #define configENABLE_BACKWARD_COMPATIBILITY 0
 
 #if defined(__TI_COMPILER_VERSION__)
-#include <ti/posix/freertos/PTLS.h>
+#include <posix/freertos/PTLS.h>
 #define traceTASK_DELETE( pxTCB ) PTLS_taskDeleteHook( pxTCB )
 #elif defined(__IAR_SYSTEMS_ICC__)
 #ifndef __IAR_SYSTEMS_ASM__
-#include <ti/posix/freertos/Mtx.h>
+#include <posix/freertos/Mtx.h>
 #define traceTASK_DELETE( pxTCB ) Mtx_taskDeleteHook( pxTCB )
 #endif
 #endif
@@ -151,7 +151,7 @@ supported, or if both static and dynamic allocation are supported. */
 
 #elif defined(__GNUC__)
 /* note: system locks required by newlib are not implemented */
-#define configUSE_NEWLIB_REENTRANT 1
+#define configUSE_NEWLIB_REENTRANT 0
 #endif
 
 /*

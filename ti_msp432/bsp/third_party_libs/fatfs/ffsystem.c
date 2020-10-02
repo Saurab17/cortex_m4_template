@@ -32,7 +32,7 @@
 /*
  * ======== ffsystem.c ========
  *
- * Support for FatFS using ti/dpl and RTS malloc/free
+ * Support for FatFS using dpl and RTS malloc/free
  */
 
 #include <stddef.h>

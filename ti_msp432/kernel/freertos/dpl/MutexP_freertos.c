@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019, Texas Instruments Incorporated
+ * Copyright (c) 2015-2017, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,75 +29,81 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 /*
- *  ======== main_freertos.c ========
+ *  ======== MutexP_freertos.c ========
  */
-#include <stdint.h>
 
-/* RTOS header files */
+#include <drivers/dpl/MutexP.h>
+
 #include <FreeRTOS.h>
-#include <task.h>
+#include <semphr.h>
+#include <queue.h>
 
-/* Example/Board Header files */
-#include <drivers/Board.h>
-
-extern void toggle_led(void *arg0);
-
-/* Stack size in bytes */
-#define THREADSTACKSIZE   1024
 
 /*
- *  ======== main ========
+ *  ======== MutexP_create ========
  */
-int main(void)
+MutexP_Handle MutexP_create(MutexP_Params *params)
 {
+    SemaphoreHandle_t sem = NULL;
 
-    /* Call driver init functions */
-    Board_init();
+    /*
+     *  NOTE:  Documentation in semphr.h says that configUSE_RECURSIVE_MUTEXES
+     *  must be set to 1 in FreeRTOSConfig.h  for this to be available, but
+     *  the xSemaphore recursive calls are inside a configUSE_RECURSIVE_MUTEXES
+     *  block.
+     */
+    sem = xSemaphoreCreateRecursiveMutex();
 
-    static const char * led = "1";
-    // xTaskCreate(toggle_led, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-    xTaskCreate(toggle_led, "abc", configMINIMAL_STACK_SIZE, (void *) led, 2, NULL);
+    return ((MutexP_Handle)sem);
+}
 
-    /* Start the FreeRTOS scheduler */
-    vTaskStartScheduler();
+/*
+ *  ======== MutexP_delete ========
+ */
+void MutexP_delete(MutexP_Handle handle)
+{
+    vSemaphoreDelete((SemaphoreHandle_t)handle);
+}
 
-    for(;;);
+/*
+ *  ======== MutexP_lock ========
+ */
+uintptr_t MutexP_lock(MutexP_Handle handle)
+{
+    SemaphoreHandle_t xMutex = (SemaphoreHandle_t)handle;
+
+    /* Retry every 10 ticks */
+    while (xSemaphoreTakeRecursive(xMutex, (TickType_t)10) == pdFALSE) {
+        ;
+    }
 
     return (0);
 }
 
-//*****************************************************************************
-//
-//! \brief Application defined malloc failed hook
-//!
-//! \param  none
-//!
-//! \return none
-//!
-//*****************************************************************************
-void vApplicationMallocFailedHook()
+/*
+ *  ======== MutexP_Params_init ========
+ */
+void MutexP_Params_init(MutexP_Params *params)
 {
-    /* Handle Memory Allocation Errors */
-    while(1)
-    {
-    }
+    params->callback = NULL;
 }
 
-//*****************************************************************************
-//
-//! \brief Application defined stack overflow hook
-//!
-//! \param  none
-//!
-//! \return none
-//!
-//*****************************************************************************
-void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
+#if (configSUPPORT_STATIC_ALLOCATION == 1)
+/*
+ *  ======== MutexP_staticObjectSize ========
+ */
+size_t MutexP_staticObjectSize(void)
 {
-    //Handle FreeRTOS Stack Overflow
-    while(1)
-    {
-    }
+    return (sizeof(StaticSemaphore_t));
+}
+#endif
+
+/*
+ *  ======== MutexP_unlock ========
+ */
+void MutexP_unlock(MutexP_Handle handle, uintptr_t key)
+{
+    SemaphoreHandle_t xMutex = (SemaphoreHandle_t)handle;
+    xSemaphoreGiveRecursive(xMutex);
 }
