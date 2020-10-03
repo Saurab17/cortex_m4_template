@@ -50,6 +50,7 @@
 #include <task.h>
 
 /* Example/Board Header files */
+#include <drivers/GPIO.h>
 
 /* Handles for printing throught UART or LCD */
 Display_Handle hSerial = NULL;
