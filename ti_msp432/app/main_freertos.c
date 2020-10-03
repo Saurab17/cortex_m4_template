@@ -35,30 +35,60 @@
  */
 #include <stdint.h>
 
+/* Display Header files */
+#include <display/Display.h>
+#include <display/DisplayUart.h>
+#include <display/DisplayExt.h>
+#include <display/AnsiColor.h>
+
+/* Board Header files */
+#include <drivers/Board.h>
+#include "Board.h"
+
 /* RTOS header files */
 #include <FreeRTOS.h>
 #include <task.h>
 
 /* Example/Board Header files */
-#include <drivers/Board.h>
 
-extern void toggle_led(void *arg0);
+/* Handles for printing throught UART or LCD */
+Display_Handle hSerial = NULL;
+Display_Handle hLcd = NULL;
 
-/* Stack size in bytes */
-#define THREADSTACKSIZE   1024
+/* Declare task function as extern */
+extern void toggle_led(void *arg0); 
 
 /*
  *  ======== main ========
- */
+ */ 
+
+
 int main(void)
 {
 
     /* Call driver init functions */
     Board_init();
 
-    static const char * led = "1";
-    // xTaskCreate(toggle_led, NULL, configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-    xTaskCreate(toggle_led, "abc", configMINIMAL_STACK_SIZE, (void *) led, 2, NULL);
+    GPIO_init();
+    Display_init(); 
+
+    /* Initialize display and try to open both UART and LCD types of display. */
+    Display_Params params;
+    Display_Params_init(&params);
+    params.lineClearMode = DISPLAY_CLEAR_BOTH;
+
+    /* Open both an available LCD display and an UART display.
+     * Whether the open call is successful depends on what is present in the
+     * Display_config[] array of the board file.
+     */
+    hLcd = Display_open(Display_Type_LCD, &params);
+    hSerial = Display_open(Display_Type_UART, &params);
+
+    static uint_least8_t led1 = Board_GPIO_LED0;
+    static uint_least8_t led2 = Board_GPIO_LED1;
+
+    xTaskCreate(toggle_led, "LED_1", 256U, (void *) &led1, 1, NULL);
+    xTaskCreate(toggle_led, "LED_2", 256U, (void *) &led2, 1, NULL);
 
     /* Start the FreeRTOS scheduler */
     vTaskStartScheduler();

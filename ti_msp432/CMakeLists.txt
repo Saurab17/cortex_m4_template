@@ -10,9 +10,6 @@ file(MAKE_DIRECTORY ${BIN_DIRECTORY})
 # Create Executable (add_executable output) in bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIRECTORY})
 
-# Set the source files
-set(SOURCES main_freertos.c FreeRTOSConfig.h)
-
 #########################.....Compiler Configuration for CMake........###########
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR arm)
@@ -28,7 +25,7 @@ set(CMAKE_C_COMPILER ${GCC_PATH}/bin/arm-none-eabi-gcc CACHE PATH "" FORCE)
 # Board specific info
 set(DEVICE MSP432P401R)
 set(LDSCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/MSP_EXP432P401R_FREERTOS.lds)
-set(DEVICE_FLAGS    "-D__${DEVICE}__ -DDeviceFamily_MSP432P401x -Dgcc")
+set(DEVICE_FLAGS    "-D__${DEVICE}__ -DDeviceFamily_MSP432P401x -Dgcc ")
 
 # FLAGS Common to all Cortex-M Boards
 set(ARM_FLAGS       "-mcpu=cortex-m4 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs")
@@ -57,16 +54,6 @@ link_directories(${GCC_PATH}/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
                  ${GCC_PATH}/arm-none-eabi/lib)
 
 # add the libraries
+add_subdirectory(app)
 add_subdirectory(bsp)
 add_subdirectory(kernel)
-add_subdirectory(app)
-
-# add the executable
-set(EXECUTABLE ${PROJECT_NAME}.out)
-add_executable(${EXECUTABLE}  ${SOURCES})
-target_link_libraries(${EXECUTABLE} drivers driverlib freertos app)
-
-# Generate and display code sizes
-add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
-    COMMAND size ${BIN_DIRECTORY}/${EXECUTABLE}
-    COMMENT "Generating build size...")

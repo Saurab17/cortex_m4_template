@@ -54,6 +54,11 @@
 #include <FreeRTOS.h>
 #include "task.h"
 
+/* Display handles defined in main.c file 
+Since the driver doesn't allow creation of multiple handles*/
+extern Display_Handle hSerial;
+extern Display_Handle hLcd;
+
 /*
  *  ======== mainThread ========
  */
@@ -62,31 +67,15 @@ void toggle_led(void *arg0)
     unsigned int ledPinValue;
     unsigned int loopCount = 0;
 
-    uint_least8_t led = Board_GPIO_LED1;
-    if(arg0 == NULL) {
-        led = Board_GPIO_LED0;
-    }
-
-    GPIO_init();
-    Display_init();
-
+    uint_least8_t led = *((uint_least8_t *) arg0);
+    
     GPIO_write(led, Board_GPIO_LED_ON);
-
-    /* Initialize display and try to open both UART and LCD types of display. */
-    Display_Params params;
-    Display_Params_init(&params);
-    params.lineClearMode = DISPLAY_CLEAR_BOTH;
-
-    /* Open both an available LCD display and an UART display.
-     * Whether the open call is successful depends on what is present in the
-     * Display_config[] array of the board file.
-     */
-    Display_Handle hLcd = Display_open(Display_Type_LCD, &params);
-    Display_Handle hSerial = Display_open(Display_Type_UART, &params);
 
     if (hSerial == NULL && hLcd == NULL) {
         /* Failed to open a display */
-        while (1) {}
+        while (1) {
+            vTaskDelay(1000);
+        }
     }
 
     /* Check if the selected Display type was found and successfully opened */
@@ -183,7 +172,10 @@ void toggle_led(void *arg0)
             Display_printf(hSerial, DisplayUart_SCROLLING, 0, "[ %d ] LED: %s", loopCount++, currLedState);
         }
 
-        vTaskDelay(1000);
+        switch(led) {
+            case Board_GPIO_LED0: vTaskDelay(1000); break;
+            default: vTaskDelay(500); break;
+        }
 
         /* Toggle LED */
         GPIO_toggle(led);
