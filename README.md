@@ -9,7 +9,7 @@ with this template, you are free to use your own favorite C/C++ code editor like
 An example setup has been provided for Texas Instruments [MSP-EXP432P401R](https://www.ti.com/store/ti/en/p/product/?p=MSP-EXP432P401R) board. The top-level project directory structure is as follows: 
 
 + app
-    - Contains user level code and board configuration files.
+    - Contains user level code and board/kernel configuration files.
 
 + bsp
     - This directory holds the support software provided by vendors in form of [SDK](https://www.ti.com/tool/download/SIMPLELINK-MSP432-SDK/3.20.00.06).
@@ -39,9 +39,6 @@ An example setup has been provided for Texas Instruments [MSP-EXP432P401R](https
 
 + CMakeLists.txt
     - Project top level cmake config file.
-
-+ main_*.c
-    - The file containing program entry `main()` function.
 
 + *.ld(s)
     - The linker script for the particular board provided by the vendor.
